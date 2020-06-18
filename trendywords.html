@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Trendy Words !</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- 따로 작성한 js 적용 -->
+    <script src="js/index.js"></script>
+    
+    <!-- 그래프 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.css"/>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.js"></script>
+    <script src="https://rawgit.com/jasondavies/d3-cloud/master/build/d3.layout.cloud.js" type="text/JavaScript"></script>
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <link rel="shortcut icon" type="image⁄x-icon" href="images/icon1.png">
+  </head>
+  <body>
+      
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="index.html">Trendy Words</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+	          <li class="nav-item active"><a href="trendywords.html" class="nav-link">Start Learn</a></li>
+	          <!-- <li class="nav-item"><a href="agent.html" class="nav-link">Agent</a></li>
+	          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+	          <li class="nav-item"><a href="properties.html" class="nav-link">Properties</a></li>
+	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li> -->
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+    
+    
+    
+    
+    <section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" style="background-image: url('images/MegaTron.jpg');" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
+          <div class="col-md-9 ftco-animate pb-5 text-center">
+          	<span>Start Learn <i class="ion-ios-arrow-forward"></i></span></p>
+            <h1 class="mb-3 bread">Trendy Words</h1> <br>
+            <p>* Word of the Year *</p>
+            <div class="tagcloud">
+              <a href="#" class="tag-cloud-link">CLIMATE EMERGENCY</a>
+              <a href="#" class="tag-cloud-link">TOXIC</a>
+              <a href="#" class="tag-cloud-link">YOUTHQUAKE</a>
+              <a href="#" class="tag-cloud-link">POST-TRUTH</a>
+              <a href="#" class="tag-cloud-link">😂</a>
+              <a href="#" class="tag-cloud-link">vape</a>
+              <a href="#" class="tag-cloud-link">selfie</a>
+            </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+	<section class="ftco-section ftco-degree-bg">
+      <div class="container">
+        <div class="row">
+            
+            <div class="col-md-3 sidebar ftco-animate">
+                <div class="sidebar-box">
+                  <form action="#" class="search-form">
+                    <div class="form-group">
+                      <a id="searchbutton" data-toggle="pill" href="#pills-Search" role="tab" aria-controls="pills-Search" aria-expanded="true" style="color: black;"><span class="icon icon-search"></span></a>
+                      <input id="searchform" type="text" class="form-control" placeholder="Type a keyword and hit enter">
+                      <script> 
+                        // Get the input field
+                        var input = document.getElementById("searchform");
+                        // Execute a function when the user releases a key on the keyboard
+                        input.addEventListener("keyup", function(event) {
+                          // Number 13 is the "Enter" key on the keyboard
+                          if (event.keyCode === 13) {
+                            // Cancel the default action, if needed
+                            event.preventDefault();
+                            // Trigger the button element with a click
+                            document.getElementById("searchbutton").click();
+                          }
+                        });
+                      </script>
+                    </div>
+                  </form>
+                </div>
+                <div class="sidebar-box ftco-animate">
+                    <!-- <a href="#" class="hardwords_link"> >> Hard Words 보기</a> -->
+                  
+                  <div class="categories">
+                    <a class="category" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                      <h4>Categories <span class="icon-chevron-down"></span></h4>
+                    </a>
+                    <div class="collapse" id="collapseExample">
+                    <ul class="nav nav-pills mb-3">
+                        <!--       
+                        <li class="nav-item">
+                          <a class="nav-link active" id="pills-description-tab" data-toggle="pill" href="#pills-description" role="tab" aria-controls="pills-description" aria-expanded="true">Features</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="pills-manufacturer-tab" data-toggle="pill" href="#pills-manufacturer" role="tab" aria-controls="pills-manufacturer" aria-expanded="true">Description</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="pills-review-tab" data-toggle="pill" href="#pills-review" role="tab" aria-controls="pills-review" aria-expanded="true">Review</a>
+                        </li> -->
+
+
+                        <li class="nav-item"><a class="nav-link active" id="pills-ALL-tab" data-toggle="pill" href="#pills-ALL" role="tab" aria-controls="pills-ALL" aria-expanded="true">ALL </a></li>
+                        <li class="nav-item"><a class="nav-link" id="pills-NatlPolitics-tab" data-toggle="pill" href="#pills-NatlPolitics" role="tab" aria-controls="pills-NatlPolitics" aria-expanded="true">Nat'l/Politics </a></li>
+                        <li class="nav-item"><a class="nav-link" id="pills-World-tab" data-toggle="pill" href="#pills-World" role="tab" aria-controls="pills-World" aria-expanded="true">World </a></li>
+                        <li class="nav-item"><a class="nav-link" id="pills-Economy-tab" data-toggle="pill" href="#pills-Economy" role="tab" aria-controls="pills-Economy" aria-expanded="true">Economy </a></li>
+                        <li class="nav-item"><a class="nav-link" id="pills-ITScience-tab" data-toggle="pill" href="#pills-ITScience" role="tab" aria-controls="pills-ITScience" aria-expanded="true">IT/Science </a></li>
+                        <li class="nav-item"><a class="nav-link" id="pills-Sports-tab" data-toggle="pill" href="#pills-Sports" role="tab" aria-controls="pills-Sports" aria-expanded="true">Sports </a></li>
+                        <li class="nav-item"><a class="nav-link" id="pills-LifeCulture-tab" data-toggle="pill" href="#pills-LifeCulture" role="tab" aria-controls="pills-LifeCulture" aria-expanded="true">Life/Culture </a></li>
+                      </ul>
+                    </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+        <div class="col-md-9 order-md-last ftco-animate">
+            <div class="tab-content" id="pills-tabContent">
+
+                <!-- ALL -->
+                <div class="tab-pane fade show active" id="pills-ALL" role="tabpanel" aria-labelledby="pills-ALL-tab">
+                    <h3>ALL</h3>
+                    <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p>
+                    
+                    <div class="block-21 mb-4 d-flex">
+                      <a class="blog-img mr-4"><h3>1.</h3></a>
+                      <div class="text">
+                          <h2 class="heading"><a href="#" style="font-size: 20px; font-weight: bold;">diversity</a><span style="font-size: 14px; margin-left: 10px;">다양성</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
+                          <p style="margin-bottom: 5px;"> ex) If we cannot now end our differences, at least we can help make the world safe for <b>diversity</b>. <a href="http://www.arirang.com/News/News_View.asp?nseq=260328" class="news_link">(관련 기사 보기)</a></p>
+                          <div class="meta">
+                              <div><span class="icon-chat"></span> Life/Culture</div>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="block-21 mb-4 d-flex">
+                      <a class="blog-img mr-4"><h3>2.</h3></a>
+                      <div class="text">
+                          <h2 class="heading"><a href="#" style="font-size: 20px; font-weight: bold;">digitalization</a><span style="font-size: 14px; margin-left: 10px;">디지털화</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
+                          <p style="margin-bottom: 5px;"> ex) South Korea's Digital New Deal focuses on creating a digital-based job market and speeding up the <b>digitalization</b> of the economy in the aftermath of the pandemic. <a href="http://www.arirang.com/News/News_View.asp?nSeq=260392" class="news_link">(관련 기사 보기)</a></p>
+                          <div class="meta">
+                              <div><span class="icon-chat"></span> IT/Science</div>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="block-21 mb-4 d-flex">
+                      <a class="blog-img mr-4"><h3>3.</h3></a>
+                      <div class="text">
+                          <h2 class="heading"><a href="#" style="font-size: 20px; font-weight: bold;">investment</a><span style="font-size: 14px; margin-left: 10px;">투자</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
+                          <p style="margin-bottom: 5px;"> ex) We've prepared the latest measures to prevent speculative <b>investment</b> and to protect those who buy houses for actual dwelling purposes. <a href="http://www.arirang.com/News/News_View.asp?nseq=260426" class="news_link">(관련 기사 보기)</a></p>
+                          <div class="meta">
+                              <div><span class="icon-chat"></span> Economy</div>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="block-21 mb-4 d-flex">
+                        <a class="blog-img mr-4"><h3>4.</h3></a>
+                        <div class="text">
+                            <h2 class="heading"><a href="#" style="font-size: 20px; font-weight: bold;">misunderstanding</a><span style="font-size: 14px; margin-left: 10px;">오해</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
+                            <p style="margin-bottom: 5px;"> ex) We cannot let animosity and <b>misunderstandings</b> get in the way of our efforts toward peace and co-existence. <a href="https://www.arirang.com/News/News_View.asp?nseq=260339" class="news_link">(관련 기사 보기)</a></p>
+                            <div class="meta">
+                                <div><span class="icon-chat"></span> Nat'l/Politics</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-21 mb-4 d-flex">
+                        <a class="blog-img mr-4"><h3>5.</h3></a>
+                        <div class="text">
+                            <h2 class="heading"><a href="#" style="font-size: 20px; font-weight: bold;">outbreak</a><span style="font-size: 14px; margin-left: 10px;">발생[발발]</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
+                            <p style="margin-bottom: 5px;"> ex) Beijing closes schools due to new COVID-19 <b>outbreak</b> <a href="http://www.arirang.com/News/News_View.asp?nseq=260447" class="news_link">(관련 기사 보기)</a></p>
+                            <div class="meta">
+                                <div><span class="icon-chat"></span> World</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-21 mb-4 d-flex">
+                      <a class="blog-img mr-4"><h3>6.</h3></a>
+                      <div class="text">
+                          <h2 class="heading"><a href="#" style="font-size: 20px; font-weight: bold;">postpone</a><span style="font-size: 14px; margin-left: 10px;">연기하다, 미루다</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
+                          <p style="margin-bottom: 5px;"> ex) The 2020 Games in Tokyo were set to start at the end of July, but it was <b>postponed</b> by a year due to the COVID-19 pandemic. <a href="http://www.arirang.com/News/News_View.asp?nseq=260101" class="news_link">(관련 기사 보기)</a></p>
+                          <div class="meta">
+                              <div><span class="icon-chat"></span> Sports</div>
+                          </div>
+                      </div>
+                    </div>
+                    
+                </div>
+
+                <!-- Nat'l/Politics -->
+                <div class="tab-pane fade" id="pills-NatlPolitics" role="tabpanel" aria-labelledby="pills-NatlPolitics-tab">
+                        <h3>Nat'l/Politics</h3>
+                    <p><a href="#" class="learn-button">학습하기</a></p>
+                    <div class="block-21 mb-4 d-flex">
+                        <a class="blog-img mr-4"><h3>1.</h3></a>
+                        <div class="text">
+                          <h2 class="heading"><a href="#" style="font-size: 20px; font-weight: bold;">misunderstanding</a><span style="font-size: 14px; margin-left: 10px;">오해</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
+                          <p style="margin-bottom: 5px;"> ex) We cannot let animosity and <b>misunderstandings</b> get in the way of our efforts toward peace and co-existence. <a href="https://www.arirang.com/News/News_View.asp?nseq=260339" class="news_link">(관련 기사 보기)</a></p>
+                          <div class="meta">
+                              <div><span class="icon-chat"></span> Nat'l/Politics</div>
+                          </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <!-- World -->
+                <div class="tab-pane fade" id="pills-World" role="tabpanel" aria-labelledby="pills-World-tab">
+                    <h3>World</h3>
+                    <p><a href="#" class="learn-button">학습하기</a></p>
+                    <div class="block-21 mb-4 d-flex">
+                        <a class="blog-img mr-4"><h3>1.</h3></a>
+                        <div class="text">
+                            <h2 class="heading"><a href="#" style="font-size: 20px; font-weight: bold;">outbreak</a><span style="font-size: 14px; margin-left: 10px;">오해</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
+                            <p style="margin-bottom: 5px;"> ex) Beijing closes schools due to new COVID-19 <b>outbreak</b> <a href="http://www.arirang.com/News/News_View.asp?nseq=260447" class="news_link">(관련 기사 보기)</a></p>
+                            <div class="meta">
+                                <div><span class="icon-chat"></span> World</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <!-- Economy -->
+                <div class="tab-pane fade" id="pills-Economy" role="tabpanel" aria-labelledby="pills-Economy-tab">
+                  <h3>Economy</h3>
+                  <p><a href="#" class="learn-button">학습하기</a></p>
+                  <div class="block-21 mb-4 d-flex">
+                      <a class="blog-img mr-4"><h3>1.</h3></a>
+                      <div class="text">
+                          <h2 class="heading"><a href="#" style="font-size: 20px; font-weight: bold;">investment</a><span style="font-size: 14px; margin-left: 10px;">투자</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
+                          <p style="margin-bottom: 5px;"> ex) We've prepared the latest measures to prevent speculative <b>investment</b> and to protect those who buy houses for actual dwelling purposes. <a href="http://www.arirang.com/News/News_View.asp?nseq=260426" class="news_link">(관련 기사 보기)</a></p>
+                          <div class="meta">
+                              <div><span class="icon-chat"></span> Economy</div>
+                          </div>
+                      </div>
+                  </div>
+                  
+              </div>
+
+                <!-- IT/Science -->
+                <div class="tab-pane fade" id="pills-ITScience" role="tabpanel" aria-labelledby="pills-ITScience-tab">
+                  <h3>IT/Science</h3>
+                  <p><a href="#" class="learn-button">학습하기</a></p>
+                  <div class="block-21 mb-4 d-flex">
+                      <a class="blog-img mr-4"><h3>1.</h3></a>
+                      <div class="text">
+                        <h2 class="heading"><a href="#" style="font-size: 20px; font-weight: bold;">digitalization</a><span style="font-size: 14px; margin-left: 10px;">디지털화</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
+                        <p style="margin-bottom: 5px;"> ex) South Korea's Digital New Deal focuses on creating a digital-based job market and speeding up the <b>digitalization</b> of the economy in the aftermath of the pandemic. <a href="http://www.arirang.com/News/News_View.asp?nSeq=260392" class="news_link">(관련 기사 보기)</a></p>
+                        <div class="meta">
+                            <div><span class="icon-chat"></span> IT/Science</div>
+                        </div>
+                      </div>
+                  </div>
+                  
+              </div>
+
+                <!-- Sports -->
+                <div class="tab-pane fade" id="pills-Sports" role="tabpanel" aria-labelledby="pills-Sports-tab">
+                  <h3>Sports</h3>
+                  <p><a href="#" class="learn-button">학습하기</a></p>
+                  <div class="block-21 mb-4 d-flex">
+                      <a class="blog-img mr-4"><h3>1.</h3></a>
+                      <div class="text">
+                          <h2 class="heading"><a href="#" style="font-size: 20px; font-weight: bold;">postpone</a><span style="font-size: 14px; margin-left: 10px;">연기하다, 미루다</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
+                          <p style="margin-bottom: 5px;"> ex) The 2020 Games in Tokyo were set to start at the end of July, but it was <b>postponed</b> by a year due to the COVID-19 pandemic. <a href="http://www.arirang.com/News/News_View.asp?nseq=260101" class="news_link">(관련 기사 보기)</a></p>
+                          <div class="meta">
+                              <div><span class="icon-chat"></span> Sports</div>
+                          </div>
+                      </div>
+                  </div>
+                  
+              </div>
+
+              <!-- Life/Culture -->
+              <div class="tab-pane fade" id="pills-LifeCulture" role="tabpanel" aria-labelledby="pills-LifeCulture-tab">
+                <h3>Life/Culture</h3>
+                <p><a href="#" class="learn-button">학습하기</a></p>
+                <div class="block-21 mb-4 d-flex">
+                    <a class="blog-img mr-4"><h3>1.</h3></a>
+                    <div class="text">
+                        <h2 class="heading"><a href="#" style="font-size: 20px; font-weight: bold;">diversity</a><span style="font-size: 14px; margin-left: 10px;">다양성</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
+                        <p style="margin-bottom: 5px;"> ex) If we cannot now end our differences, at least we can help make the world safe for <b>diversity</b>. <a href="http://www.arirang.com/News/News_View.asp?nseq=260328" class="news_link">(관련 기사 보기)</a></p>
+                        <div class="meta">
+                            <div><span class="icon-chat"></span> Life/Culture</div>
+                        </div>
+                    </div>
+                </div>
+                
+              </div>
+
+              <!-- 검색 결과 -->
+              <div class="tab-pane fade" id="pills-Search" role="tabpanel" aria-labelledby="pills-Search-tab">
+                <h3>검색 결과</h3>
+                <!-- <p><a href="#" class="learn-button">학습하기</a></p> -->
+                <div class="block-21 mb-4 d-flex">
+                    <a class="blog-img mr-4"><h3>1.</h3></a>
+                    <div class="text">
+                        <h2 class="heading"><a href="#" style="font-size: 20px; font-weight: bold;">outbreak</a><span style="font-size: 14px; margin-left: 10px;">오해</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
+                        <p style="margin-bottom: 5px;"> ex) Beijing closes schools due to new COVID-19 <b>outbreak</b> <a href="http://www.arirang.com/News/News_View.asp?nseq=260447" class="news_link">(관련 기사 보기)</a></p>
+                        <div class="meta">
+                            <div><span class="icon-chat"></span> World</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            </div> <!-- .col-md-8 -->
+          
+
+        </div>
+      </div>
+    </div>
+    </section> <!-- .section -->
+
+	  <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">학습하기</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- <div onclick="play()"><img src="images/speaker.png" width="25px" style="cursor: pointer;"></div> -->
+            <!-- <div style="margin-bottom: 5px;"> -->
+              <a href='javascript:void(0);' onclick="play()" class="learn-button">단어듣기</a>
+              <a href='javascript:void(0);' onclick="check()" class="learn-button">발음체크</a>
+              <span id="circle" class="icon-circle" style="display: none; color: rgb(255,0,0);"></span>
+              <span id="stars" style="display: none; font-size: 14px;">
+                <span class="icon-check2"></span> 내 발음 정확도: 
+                <i class="ion-ios-star" style="color: #f7b71d"></i>
+                <i class="ion-ios-star" style="color: #f7b71d"></i>
+                <i class="ion-ios-star" style="color: #f7b71d"></i>
+                <i class="ion-ios-star" style="color: #f7b71d"></i>
+                <i class="ion-ios-star"></i>
+              </span>
+              <audio id="audio_play" src="v.mp3"></audio><br>
+              <span style="font-size: 20px; font-weight: bold;">misunderstanding</span>
+            <!-- </div> -->
+            <!-- https://www.arirang.com/News/News_View.asp?nseq=260339 -->
+            <div>
+            1. 명사) 오해, 착오 <br>
+            2. 명사) (가벼운) 언쟁[불화] <br>
+            <p style="font-size: 14px;">* 예문: We cannot let animosity and <b>misunderstandings</b> get in the way of our efforts toward peace and co-existence.</p>
+            </div>
+            <div id="chart" style="text-align: center;"></div>
+            <script>
+              // Modal 단어 빈도수 그래프
+              $(document).ready(function() {
+                $('#exampleModalCenter').on('shown.bs.modal', function(e){ 
+                    var chart = c3.generate({
+                    bindto: '#chart',
+                    size: {
+                        height: 320*0.7,
+                        width: 466*0.7
+                    },
+                    data: {
+                        x: 'x',
+                        columns: [
+                            ['x', '2016', '2017', '2018', '2019', '2020'],
+                            ['frequency', 50, 100, 70, 120, 200]
+                        ],
+                        type: 'spline',
+                        colors: {
+                            'frequency': '#ff9500'
+                         }
+                    },
+                  });
+                //   setInterval(function () {
+                //     x = Math.random() % 100;
+                //     y = Math.random() % 50;
+                //     chart.load({
+                //         columns: [
+                //             ['frequency', x - y, 2*x + 2*y, x + y, x - 2*y, x + 2*y, 3*x - y]
+                //         ]
+                //     });
+                //   }, 100);
+                    
+                });
+              });
+            </script>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-light" data-dismiss="modal">닫기</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">이전</button>
+            <button type="button" class="btn btn-secondary" onclick="location.href='trendywords.html'">다음</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="ftco-footer ftco-section">
+      <div class="container">
+        <div class="row mb-3">
+
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Trendy Words</h2>
+              <p>Far far away, behind the word mountains, far from the countries.</p>
+              <ul class="ftco-footer-social list-unstyled mt-5">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-4">
+              <h2 class="ftco-heading-2">About Us</h2>
+              <ul class="list-unstyled">
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Our Story</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Meet the team</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Careers</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Have a Questions?</h2>
+              <div class="block-23 mb-3">
+                <ul>
+                  <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
+                  <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+                  <li><a href="#"><span class="icon icon-envelope pr-4"></span><span class="text">info@yourdomain.com</span></a></li>
+                </ul> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+          <!--
+            
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-4">
+              <h2 class="ftco-heading-2">Community</h2>
+              <ul class="list-unstyled">
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Search Properties</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>For Agents</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Reviews</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>FAQs</a></li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="col-md">
+             <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Company</h2>
+              <ul class="list-unstyled">
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>About Us</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Press</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Contact</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Careers</a></li>
+              </ul>
+            </div>
+          </div>
+          
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p style="color: transparent;">
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" style="color: transparent;">Colorlib</a>
+           </p>
+          </div>
+        </div>
+      </div>
+    </footer> -->
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/bootstrap-datepicker.js"></script>
+  <script src="js/jquery.timepicker.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script> -->
+  <!-- <script src="js/google-map.js"></script> -->
+  <script src="js/main.js"></script>
+  </body>
+</html>
