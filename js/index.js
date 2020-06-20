@@ -35,3 +35,27 @@ function check(){
         }
       }, 2500);
 }
+
+
+
+// // $(document).ready(function() {
+//   // $('#transition_graph').on('shown.bs.modal', function(e){ 
+//       var chart = c3.generate({
+//       bindto: '#chart',
+//       size: {
+//           height: 320*0.7,
+//           width: 466*0.7
+//       },
+//       data: {
+//           x: 'x',
+//           columns: [
+//               ['x', "Nat'l/Politics", 'World', 'Economy', 'IT/Science', 'Sports', 'Life/Culture', 'Weather', 'Foreign Policy'],
+//               ['frequency', 50, 100, 70, 120, 200]
+//           ],
+//           type: 'spline',
+//           colors: {
+//               'frequency': '#ff9500'
+//            }
+//       },
+//   });
+// // });
