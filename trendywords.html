@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <title>Trendy Words !</title>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -24,9 +25,6 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-
-    <!-- 따로 작성한 js 적용 -->
-    <script src="js/index.js"></script>
     
     <!-- 그래프 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.css"/>
@@ -159,8 +157,8 @@
               <div class="tab-pane fade show active" id="pills-ALL" role="tabpanel" aria-labelledby="pills-ALL-tab">
                   <h3>ALL</h3>
                   <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p>
-                  
-                  <div class="block-21 mb-4 d-flex">
+                  <div id="ALLAjax"></div>
+                  <!-- <div class="block-21 mb-4 d-flex">
                     <a class="blog-img mr-4"><h3>1.</h3></a>
                     <div class="text">
                         <h2 class="heading"><a href="#" data-toggle="modal" data-target="#exampleModalCenter" style="font-size: 20px; font-weight: bold;">diversity</a><span style="font-size: 14px; margin-left: 10px;">다양성</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
@@ -219,7 +217,7 @@
                             <div><span class="icon-chat"></span> Sports</div>
                         </div>
                     </div>
-                  </div>
+                  </div> -->
                   
               </div>
 
@@ -227,7 +225,8 @@
               <div class="tab-pane fade" id="pills-NatlPolitics" role="tabpanel" aria-labelledby="pills-NatlPolitics-tab">
                       <h3>Nat'l/Politics</h3>
                   <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p>
-                  <div class="block-21 mb-4 d-flex">
+                  <div id="NatlPoliticsAjax"></div>
+                  <!-- <div class="block-21 mb-4 d-flex">
                       <a class="blog-img mr-4"><h3>1.</h3></a>
                       <div class="text">
                         <h2 class="heading"><a href="#" data-toggle="modal" data-target="#exampleModalCenter" style="font-size: 20px; font-weight: bold;">misunderstanding</a><span style="font-size: 14px; margin-left: 10px;">오해</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
@@ -236,7 +235,7 @@
                             <div><span class="icon-chat"></span> Nat'l/Politics</div>
                         </div>
                       </div>
-                  </div>
+                  </div> -->
                     
                 </div>
 
@@ -244,7 +243,8 @@
                 <div class="tab-pane fade" id="pills-World" role="tabpanel" aria-labelledby="pills-World-tab">
                     <h3>World</h3>
                     <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p>
-                    <div class="block-21 mb-4 d-flex">
+                    <div id="WorldAjax"></div>
+                    <!-- <div class="block-21 mb-4 d-flex">
                         <a class="blog-img mr-4"><h3>1.</h3></a>
                         <div class="text">
                             <h2 class="heading"><a href="#" data-toggle="modal" data-target="#exampleModalCenter" style="font-size: 20px; font-weight: bold;">outbreak</a><span style="font-size: 14px; margin-left: 10px;">오해</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
@@ -253,7 +253,7 @@
                                 <div><span class="icon-chat"></span> World</div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
                 
@@ -261,7 +261,8 @@
                 <div class="tab-pane fade" id="pills-Economy" role="tabpanel" aria-labelledby="pills-Economy-tab">
                   <h3>Economy</h3>
                   <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p>
-                  <div class="block-21 mb-4 d-flex">
+                  <div id="EconomyAjax"></div>
+                  <!-- <div class="block-21 mb-4 d-flex">
                       <a class="blog-img mr-4"><h3>1.</h3></a>
                       <div class="text">
                           <h2 class="heading"><a href="#" data-toggle="modal" data-target="#exampleModalCenter" style="font-size: 20px; font-weight: bold;">investment</a><span style="font-size: 14px; margin-left: 10px;">투자</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
@@ -270,7 +271,7 @@
                               <div><span class="icon-chat"></span> Economy</div>
                           </div>
                       </div>
-                  </div>
+                  </div> -->
                   
                 </div>
 
@@ -278,7 +279,8 @@
                 <div class="tab-pane fade" id="pills-ITScience" role="tabpanel" aria-labelledby="pills-ITScience-tab">
                   <h3>IT/Science</h3>
                   <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p>
-                  <div class="block-21 mb-4 d-flex">
+                  <div id="ITScienceAjax"></div>
+                  <!-- <div class="block-21 mb-4 d-flex">
                       <a class="blog-img mr-4"><h3>1.</h3></a>
                       <div class="text">
                         <h2 class="heading"><a href="#" data-toggle="modal" data-target="#exampleModalCenter" style="font-size: 20px; font-weight: bold;">digitalization</a><span style="font-size: 14px; margin-left: 10px;">디지털화</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
@@ -287,7 +289,7 @@
                             <div><span class="icon-chat"></span> IT/Science</div>
                         </div>
                       </div>
-                  </div>
+                  </div> -->
                     
                 </div>
 
@@ -295,7 +297,8 @@
                 <div class="tab-pane fade" id="pills-Sports" role="tabpanel" aria-labelledby="pills-Sports-tab">
                   <h3>Sports</h3>
                   <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p>
-                  <div class="block-21 mb-4 d-flex">
+                  <div id="SportsAjax"></div>
+                  <!-- <div class="block-21 mb-4 d-flex">
                       <a class="blog-img mr-4"><h3>1.</h3></a>
                       <div class="text">
                           <h2 class="heading"><a href="#" data-toggle="modal" data-target="#exampleModalCenter" style="font-size: 20px; font-weight: bold;">postpone</a><span style="font-size: 14px; margin-left: 10px;">연기하다, 미루다</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
@@ -304,7 +307,7 @@
                               <div><span class="icon-chat"></span> Sports</div>
                           </div>
                       </div>
-                  </div>
+                  </div> -->
   
                 </div>
 
@@ -312,7 +315,8 @@
                 <div class="tab-pane fade" id="pills-LifeCulture" role="tabpanel" aria-labelledby="pills-LifeCulture-tab">
                   <h3>Life/Culture</h3>
                   <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p>
-                  <div class="block-21 mb-4 d-flex">
+                  <div id="LifeCultureAjax"></div>
+                  <!-- <div class="block-21 mb-4 d-flex">
                       <a class="blog-img mr-4"><h3>1.</h3></a>
                       <div class="text">
                           <h2 class="heading"><a href="#" data-toggle="modal" data-target="#exampleModalCenter" style="font-size: 20px; font-weight: bold;">diversity</a><span style="font-size: 14px; margin-left: 10px;">다양성</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
@@ -321,7 +325,7 @@
                               <div><span class="icon-chat"></span> Life/Culture</div>
                           </div>
                       </div>
-                  </div>
+                  </div> -->
                   
                 </div>
 
@@ -329,6 +333,7 @@
                 <div class="tab-pane fade" id="pills-Weather" role="tabpanel" aria-labelledby="pills-Weather-tab">
                   <h3>Weather</h3>
                   <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p>
+                  <div id="WeatherAjax"></div>
                   <!-- <div class="block-21 mb-4 d-flex">
                       <a class="blog-img mr-4"><h3>1.</h3></a>
                       <div class="text">
@@ -344,26 +349,8 @@
                 <div class="tab-pane fade" id="pills-ForeignPolicy" role="tabpanel" aria-labelledby="pills-ForeignPolicy-tab">
                   <h3>Foreign Policy</h3>
                   <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p>
-                  <script>
-                    $(document).ready(function() {
-                        $("#pills-ForeignPolicy-tab").click(function() {
-                            var result = document.getElementById('ajaxValue');
-                            $.ajax({
-                                url : "http://113.198.137.82:10021/word_info/top_rank/?rank=1&cycle=bySubject&subject=Foreign%20Policy", // test.jsp 에서 받아옴
-                                dataType :"json", // 데이터타입을 json 으로 받아옴
-                                success : function(data) {
-                                    console.log(result.innerHTML = data);
-                                },
-                                error : function(e) {
-                                    console.log(e.responseText);
-                                }
-                            });
-                        });
-                });
-                    </script>
-                  <div id="ajaxValue"></div>
-                  
-                  <!-- <div class="block-21 mb-4 d-flex">
+                  <div id="ForeignPolicyAjax"></div>
+		  <!-- <div class="block-21 mb-4 d-flex">
                       <a class="blog-img mr-4"><h3>1.</h3></a>
                       <div class="text">
                         <h2 class="heading"><a href="#" data-toggle="modal" data-target="#exampleModalCenter" style="font-size: 20px; font-weight: bold;">postpone</a><span style="font-size: 14px; margin-left: 10px;">연기하다, 미루다</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
@@ -596,5 +583,10 @@
   <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script> -->
   <!-- <script src="js/google-map.js"></script> -->
   <script src="js/main.js"></script>
+
+  <!-- 따로 작성한 js 적용 -->
+  <script src="js/index.js"></script>
+  <script src="js/ajax.js"></script>
+  <script src="js/trendywords.js"></script>
   </body>
 </html>
