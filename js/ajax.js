@@ -4,21 +4,25 @@ function GetAllWords() {
     let innerText = new String();
 
     $.ajax({
+        crossOrigin: true,
         url : "http://113.198.137.82:10021/word_info/top_rank/?rank=10&cycle=totalCount",
         dataType :"json",
+        
         success : function(data) {
             for (let index = 0; index < data.length; index++) {
                 let word = data[index];
 
                 $.ajax({
+                    crossOrigin: true,
                     url: "http://113.198.137.82:10021/word_info/?word="+ word[0] + "&collection=WordDictionary",
                     dataType: "json",
+                    
                     async: false,
                     success : function(data){
                         console.log(data['soundLink']);
                         innerText = innerText.concat("<div class='block-21 mb-4 d-flex'><a class='blog-img mr-4'><h3>" + (index+1) + '.' + "</h3></a>");
                         innerText = innerText.concat("<div class='text'><h2 class='heading'><a href='#' data-toggle='modal' data-target='#exampleModalCenter' style='font-size: 20px; font-weight: bold;'>" + word[0] + "</a><span style='font-size: 14px; margin-left: 10px;'>" + data['meaning']['Noun'] + 
-                        "</span> <a href='" + data['soundLink'] + "' style='margin-left: 10px;'><span class='icon-volume-up'></span></a></h2><p style='margin-bottom: 5px;'>" + data['exampleText'] + "</p></div></div>");
+                        "</span> <a href='" + data['soundLink'] + "' style='margin-left: 10px;'><span class='icon-volume-up'></span></a></h2><p style='margin-bottom: 5px;'>" + data['exampleText'] + "<br>" + data['exampleKoreanText'] + "</p></div></div>");
                     },
                     error : function(e) {
                         console.log(e.responseText);
@@ -42,6 +46,7 @@ function GetNatlPoliticsWords() {
     $.ajax({
         url : "http://113.198.137.82:10021/word_info/top_rank/?rank=10&cycle=bySubject&subject=Nat%27l/Politics",
         dataType :"json",
+        crossOrigin: true,
         success : function(data) {
             for (let index = 0; index < data.length; index++) {
                 let word = data[index];
@@ -49,12 +54,15 @@ function GetNatlPoliticsWords() {
                 $.ajax({
                     url: "http://113.198.137.82:10021/word_info/?word="+ word[0] + "&collection=WordDictionary",
                     dataType: "json",
+                    crossOrigin: true,
                     async: false,
                     success : function(data){
                         console.log(data['soundLink']);
                         innerText = innerText.concat("<div class='block-21 mb-4 d-flex'><a class='blog-img mr-4'><h3>" + (index+1) + '.' + "</h3></a>");
                         innerText = innerText.concat("<div class='text'><h2 class='heading'><a href='#' data-toggle='modal' data-target='#exampleModalCenter' style='font-size: 20px; font-weight: bold;'>" + word[0] + "</a><span style='font-size: 14px; margin-left: 10px;'>" + data['meaning']['Noun'] + 
-                        "</span> <audio id='audio_play' src='" + data['soundLink'] + "'></audio> <a href='javascript:void(0);' onclick='play()' style='margin-left: 10px;'><span class='icon-volume-up'></span></a></h2><p style='margin-bottom: 5px;'>" + data['exampleText'] + "</p></div></div>");
+                        "</span> <a href='" + data['soundLink'] + "' style='margin-left: 10px;'><span class='icon-volume-up'></span></a></h2><p style='margin-bottom: 5px;'>" + data['exampleText'] + "</p></div></div>");
+                    
+                        // <audio id='audio_play' src='" + data['soundLink'] + "'></audio> <a href='javascript:void(0);' onclick='play()' style='margin-left: 10px;'><span class='icon-volume-up'></span></a></h2><p style='margin-bottom: 5px;'>" + data['exampleText'] + "</p></div></div>");
                     },
                     error : function(e) {
                         console.log(e.responseText);
@@ -79,6 +87,7 @@ function GetWorldWords() {
     $.ajax({
         url : "http://113.198.137.82:10021/word_info/top_rank/?rank=10&cycle=bySubject&subject=World",
         dataType :"json",
+        crossOrigin: true,
         success : function(data) {
             for (let index = 0; index < data.length; index++) {
                 let word = data[index];
@@ -86,6 +95,7 @@ function GetWorldWords() {
                 $.ajax({
                     url: "http://113.198.137.82:10021/word_info/?word="+ word[0] + "&collection=WordDictionary",
                     dataType: "json",
+                    crossOrigin: true,
                     async: false,
                     success : function(data){
                         console.log(data['soundLink']);
@@ -114,6 +124,7 @@ function GetEconomyWords() {
     $.ajax({
         url : "http://113.198.137.82:10021/word_info/top_rank/?rank=10&cycle=bySubject&subject=Economy",
         dataType :"json",
+        crossOrigin: true,
         success : function(data) {
             for (let index = 0; index < data.length; index++) {
                 let word = data[index];
@@ -121,6 +132,7 @@ function GetEconomyWords() {
                 $.ajax({
                     url: "http://113.198.137.82:10021/word_info/?word="+ word[0] + "&collection=WordDictionary",
                     dataType: "json",
+                    crossOrigin: true,
                     async: false,
                     success : function(data){
                         console.log(data['soundLink']);
@@ -149,6 +161,7 @@ function GetITScienceWords() {
     $.ajax({
         url : "http://113.198.137.82:10021/word_info/top_rank/?rank=10&cycle=bySubject&subject=IT/Science",
         dataType :"json",
+        crossOrigin: true,
         success : function(data) {
             for (let index = 0; index < data.length; index++) {
                 let word = data[index];
@@ -156,6 +169,7 @@ function GetITScienceWords() {
                 $.ajax({
                     url: "http://113.198.137.82:10021/word_info/?word="+ word[0] + "&collection=WordDictionary",
                     dataType: "json",
+                    crossOrigin: true,
                     async: false,
                     success : function(data){
                         console.log(data['soundLink']);
@@ -184,6 +198,7 @@ function GetSportsWords() {
     $.ajax({
         url : "http://113.198.137.82:10021/word_info/top_rank/?rank=10&cycle=bySubject&subject=Sports",
         dataType :"json",
+        crossOrigin: true,
         success : function(data) {
             for (let index = 0; index < data.length; index++) {
                 let word = data[index];
@@ -191,6 +206,7 @@ function GetSportsWords() {
                 $.ajax({
                     url: "http://113.198.137.82:10021/word_info/?word="+ word[0] + "&collection=WordDictionary",
                     dataType: "json",
+                    crossOrigin: true,
                     async: false,
                     success : function(data){
                         console.log(data['soundLink']);
@@ -219,6 +235,7 @@ function GetLifeCultureWords() {
     $.ajax({
         url : "http://113.198.137.82:10021/word_info/top_rank/?rank=10&cycle=bySubject&subject=Life/Culture",
         dataType :"json",
+        crossOrigin: true,
         success : function(data) {
             for (let index = 0; index < data.length; index++) {
                 let word = data[index];
@@ -226,6 +243,7 @@ function GetLifeCultureWords() {
                 $.ajax({
                     url: "http://113.198.137.82:10021/word_info/?word="+ word[0] + "&collection=WordDictionary",
                     dataType: "json",
+                    crossOrigin: true,
                     async: false,
                     success : function(data){
                         console.log(data['soundLink']);
@@ -254,6 +272,7 @@ function GetWeatherWords() {
     $.ajax({
         url : "http://113.198.137.82:10021/word_info/top_rank/?rank=10&cycle=bySubject&subject=Weather",
         dataType :"json",
+        crossOrigin: true,
         success : function(data) {
             for (let index = 0; index < data.length; index++) {
                 let word = data[index];
@@ -261,6 +280,7 @@ function GetWeatherWords() {
                 $.ajax({
                     url: "http://113.198.137.82:10021/word_info/?word="+ word[0] + "&collection=WordDictionary",
                     dataType: "json",
+                    crossOrigin: true,
                     async: false,
                     success : function(data){
                         console.log(data['soundLink']);
@@ -290,6 +310,7 @@ function GetForeignPolicyWords() {
     $.ajax({
         url : "http://113.198.137.82:10021/word_info/top_rank/?rank=10&cycle=bySubject&subject=Foreign%20Policy",
         dataType :"json",
+        crossOrigin: true,
         success : function(data) {
             for (let index = 0; index < data.length; index++) {
                 let word = data[index];
@@ -297,6 +318,7 @@ function GetForeignPolicyWords() {
                 $.ajax({
                     url: "http://113.198.137.82:10021/word_info/?word="+ word[0] + "&collection=WordDictionary",
                     dataType: "json",
+                    crossOrigin: true,
                     async: false,
                     success : function(data){
                         console.log(data['soundLink']);
@@ -392,3 +414,24 @@ function GetForeignPolicyWords() {
         
 //     });
 //   });
+
+
+
+// $("exampleModalLongTitle").click("load", GetRecord);
+// function GetRecord() {
+//     var result = document.getElementById('record_div');
+
+//     $.ajax({
+//         crossOrigin: true,
+//         url : "http://localhost:5000/",
+//         dataType :"html",
+        
+//         success : function(data) {
+//                 innerText = innerText.concat(data);
+//                 result.innerHTML = innerText;
+//         },
+//         error : function(e) {
+//             console.log(e.responseText);
+//         }
+//     });
+// }
