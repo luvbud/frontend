@@ -93,7 +93,7 @@
                             }
                           });
                         </script>
-                        <button type="button" id="searchbutton" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><span class="ion-ios-search modal-dialog modal-dialog-scrollable"></span></button>
+                        <button type="button" id="searchbutton" class="btn btn-primary" data-id="search" data-toggle="modal" data-target="#exampleModalCenter"><span class="ion-ios-search modal-dialog modal-dialog-scrollable"></span></button>
                       </div>
 			              </div>
 		        			</div>
@@ -111,47 +111,58 @@
     </div>
     <!-- Modal -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <!-- <div class="modal-dialog modal-dialog-centered" role="document">
+      
+
+      <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">'misunderstanding'에 대한 결과</h5>
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">학습하기</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+                <span aria-hidden="true">&times;</span>
             </button>
-          </div>
-          <div class="modal-body"> -->
+            </div>
+            <div class="modal-body">
             <!-- <div onclick="play()"><img src="images/speaker.png" width="25px" style="cursor: pointer;"></div> -->
-            <!-- <div style="margin-bottom: 10px;">
-              <a href='javascript:void(0);' onclick="play()" class="learn-button">단어듣기</a>
-              <a href='javascript:void(0);' onclick="check()" class="learn-button">발음체크</a>
-              <span id="circle" class="icon-circle" style="display: none; color: rgb(255,0,0);"></span>
-              <span id="stars" style="display: none; font-size: 14px;">
+            <div style="margin-bottom: 10px;">
+                <a href='javascript:void(0);' onclick="play()" class="learn-button">단어듣기</a>
+                <span class="holder">
+                    <span data-role="controls">
+                        <button>발음체크</button>
+                    </span>
+                    <span data-role="recordings"></span>
+                    <span style="font-size:10px;">(녹음이 끝나면 다시 클릭해주세요)</span>
+                </span>
+
+
+
+                <!-- <span id="circle" class="icon-circle" style="display: none; color: rgb(255,0,0);"></span>
+                <span id="stars" style="display: none; font-size: 14px;">
                 <span class="icon-check2"></span> 내 발음 정확도: 
                 <i class="ion-ios-star" style="color: #f7b71d"></i>
                 <i class="ion-ios-star" style="color: #f7b71d"></i>
                 <i class="ion-ios-star" style="color: #f7b71d"></i>
                 <i class="ion-ios-star" style="color: #f7b71d"></i>
                 <i class="ion-ios-star"></i>
-              </span>
-              <audio id="audio_play" src="v.mp3"></audio>
+                </span> -->
+                <audio id="audio_play" src="v.mp3"></audio>
             </div>
             <div>
-              <span style="font-size: 20px; font-weight: bold;">misunderstanding</span>
-              <span style="font-size: 14px; margin-left: 10px;">
+                <span style="font-size: 20px; font-weight: bold;">misunderstanding</span>
+                <span style="font-size: 14px; margin-left: 10px;">
                 <i class="ion-ios-star" style="color: #E6384B"></i>
                 <i class="ion-ios-star" style="color: #E6384B"></i>
                 <i class="ion-ios-star" style="color: #E6384B"></i>
-                <i class="ion-ios-star" style="color: #E6384B"></i> -->
+                <i class="ion-ios-star" style="color: #E6384B"></i>
                 <!-- <i class="ion-ios-star"></i> -->
-              <!-- </span><br>
-              1. 명사) 오해, 착오 <br>
-              2. 명사) (가벼운) 언쟁[불화] <br>
+                </span><br>
+                1. 명사) 오해, 착오 <br>
+                2. 명사) (가벼운) 언쟁[불화] <br>
             <p style="font-size: 14px;">* 예문: We cannot let animosity and <b>misunderstandings</b> get in the way of our efforts toward peace and co-existence.</p>
             </div>
-            <div id="chart" style="text-align: center;"></div> -->
+            <div id="chart" style="text-align: center;"></div>
             <!-- <script>
-              // Modal 단어 빈도수 그래프
-              $(document).ready(function() {
+                // Modal 단어 빈도수 그래프
+                $(document).ready(function() {
                 $('#exampleModalCenter').on('shown.bs.modal', function(e){ 
                     var chart = c3.generate({
                     bindto: '#chart',
@@ -168,14 +179,14 @@
                         type: 'spline',
                         colors: {
                             'frequency': '#ff9500'
-                         }
+                            }
                     },
                     axis: {
-                          x: {
-                              type: 'category' // this needed to load string x value
-                          }
-                      }
-                  });
+                            x: {
+                                type: 'category' // this needed to load string x value
+                            }
+                        }
+                    });
                 //   setInterval(function () {
                 //     x = Math.random() % 100;
                 //     y = Math.random() % 50;
@@ -187,17 +198,200 @@
                 //   }, 100);
                     
                 });
-              });
-            </script>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
-            <button type="button" class="btn btn-primary" onclick="location.href='trendywords.html'">더 학습하기</button>
-          </div>
+                });
+            </script> -->
+            </div>
+            <div class="modal-footer">
+                <button type='button' class='btn btn-secondary' data-dismiss='modal'>닫기</button>
+                <button type='button' class='btn btn-primary' onclick='location.href=trendywords.html'>더 학습하기</button>
+            </div>
         </div>
-      </div> -->
+      </div>
     </div>
    
+    <script>
+      jQuery(document).ready(function () {
+        var $ = jQuery;
+        var osc;
+        var myRecorder = {
+            objects: {
+                context: null,
+                stream: null,
+                recorder: null
+            },
+            init: function () {
+                if (null === myRecorder.objects.context) {
+                    myRecorder.objects.context = new (
+                        window.AudioContext || window.webkitAudioContext
+                    );
+                }
+            },
+            start: function () {
+                var options = {audio: {desiredSampRate: 16 * 1000}, video: false};
+                navigator.mediaDevices.getUserMedia(options).then(function (stream) {
+                    myRecorder.objects.stream = stream;
+                    myRecorder.objects.recorder = new Recorder(
+                        myRecorder.objects.context.createMediaStreamSource(stream),
+                        // {numChannels: 1}
+                        {audioBitsPerSecond : 16000}
+                    );
+                    myRecorder.objects.recorder.record();
+                }).catch(function (err) {});
+            },
+            stop: function (listObject) {
+                if (null !== myRecorder.objects.stream) {
+                    myRecorder.objects.stream.getAudioTracks()[0].stop();
+                }
+                if (null !== myRecorder.objects.recorder) {
+
+                    myRecorder.objects.recorder.stop();
+
+                    // Validate object
+                    if (null !== listObject
+                            && 'object' === typeof listObject
+                            && listObject.length > 0) {
+                        // Export the WAV file
+                        myRecorder.objects.recorder.exportWAV(function (blob) {
+                            var url = (window.URL || window.webkitURL)
+                                    .createObjectURL(blob);
+                            
+                            // console.log(url);
+                            // Prepare the playback
+                            var audioObject = $('<audio controls></audio>')
+                                    .attr('src', url);
+
+                            // Prepare the download link
+                            var downloadObject = $('<a>&#9660;</a>')
+                                    .attr('href', url)
+                                    .attr('download', new Date().toUTCString() + '.wav');
+
+                            var check = $('<button id="pro_check">발음체크</button>')
+
+                            // Wrap everything in a row
+                            var holderObject = $('<div class="row"></div>')
+                                    .append(audioObject)
+                                    .append(downloadObject)
+                                    .append(check);
+
+                            // Append to the list
+                            listObject.append(holderObject);
+                            console.log('Blob - ', blob); 
+                            var reader = new FileReader(); 
+                            reader.readAsDataURL(blob);
+                            
+                            reader.onloadend = function () { 
+                              var base64String = reader.result; 
+                              // console.log('Base64 String - ', base64String); 
+                            
+                              // Simply Print the Base64 Encoded String, 
+                              // without additional data: Attributes. 
+                              // console.log('Base64 String without Tags- ', base64String.substr(base64String.indexOf(', ') + 23));
+                              // base64String.substr(base64String.indexOf(', ') + 23)
+                              var enc = new String();
+                              enc = enc.concat(base64String.substr(base64String.indexOf(',') + 1))
+                              
+                              //console.log('enc;', enc)
+                              // var enc = reader.result;
+                              // var enc = URL.createObjectURL(blob);
+                              console.log(enc);
+
+                              $("#pro_check").click(function() {
+                                // console.log('enc:', enc)
+                                var encode = { 
+                                    idd: enc,
+                              }
+                            
+                                //console.log(enc)
+
+                          // $.ajax({
+                          //     url: 'http://113.198.137.82:10021/check',
+                          //     // method: 'GET',
+                          //     // contentType: "application/json",
+                          //     dataType: 'json',
+                          //     data: encode,
+                          //     crossOrigin: true,
+                          //     success: function(data) {
+                          //       alert('성공:'+data.result)
+                          //       console.log(data.result)
+
+                          //     },
+                          //     error: function(request, status, error){
+                          //       alert('실패')
+                          //       alert(error);
+                          //     }
+                          // });
+                          // });
+                          
+                          
+                          $.ajax({
+                              url: 'http://113.198.137.82:10021/check/?idd='+enc,
+                              method: 'GET',
+                              // contentType: "application/json",
+                              // headers: {  'Access-Control-Allow-Origin': '*' },
+                              // method: 'GET',
+                              // data: encode,
+                              crossOrigin: true,
+                              success: function(data) {
+                                var temp = JSON.parse(data);
+                                alert('성공 점수 : '+ temp['return_object']['score']);
+                                console.log(temp);
+                              },
+                              error: function(request, status, error){
+                                alert('실패')
+                                alert(error);
+                              }
+                          });
+                          });
+                            }
+                           
+                        });
+
+                    }
+                }
+            }
+        };
+
+        // Prepare the recordings list
+        var listObject = $('[data-role="recordings"]');
+
+        // Prepare the record button
+        $('[data-role="controls"] > button').click(function () {
+            // Initialize the recorder
+            myRecorder.init();
+
+            // Get the button state
+            var buttonState = !!$(this).attr('data-recording');
+
+            // Toggle
+            if (!buttonState) {
+                $(this).attr('data-recording', 'true');
+                myRecorder.start();
+            } else {
+                $(this).attr('data-recording', '');
+                myRecorder.stop(listObject);
+            }
+        });
+    });
+
+    
+    // $(document).ready(function() {
+      // $("#pro_check").click(function() {
+      //     var result = document.getElementById('ajaxValue');
+      //     $.ajax({
+      //         url : "http://113.198.137.82:10021/check",
+      //         dataType :"json", // 데이터타입을 json 으로 받아옴
+      //         success : function(data) {
+      //             console.log(result.innerHTML = data);
+      //         },
+      //         error : function(e) {
+      //             console.log(e.responseText);
+      //         }
+      //     });
+      // });
+    // });
+
+    </script>
+
     <section class="ftco-section goto-here" style="padding: 6em 0;">
       <div class="container">
         
@@ -385,6 +579,7 @@
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>
@@ -407,7 +602,6 @@
   <script src="js/index.js"></script>
   <!-- <script src="js/ajax.js"></script> -->
 
-  <script src="js/includeHTML.js"></script>
   <script src="js/graph.js"></script>
   <!-- <script src="js/record.js"></script> -->
   </body>

@@ -11,15 +11,34 @@
     <title>Document</title>
     
     <script>
+    //     $(document).ready(function() {
+    //         $("#click").click(function() {
+    //             var result = document.getElementById('ajaxValue');
+    //             $.ajax({
+    //                 url : "http://113.198.137.82:10021/word_info/top_rank/?rank=1&cycle=bySubject&subject=Foreign%20Policy", // test.jsp 에서 받아옴
+    //                 dataType :"json", // 데이터타입을 json 으로 받아옴
+    //                 crossOrigin: true,
+    //                 success : function(data) {
+    //                     console.log(result.innerHTML = data);
+    //                 },
+    //                 error : function(e) {
+    //                     console.log(e.responseText);
+    //                 }
+    //             });
+    //         });
+    // });
         $(document).ready(function() {
             $("#click").click(function() {
+                // var params = "uid=11";
                 var result = document.getElementById('ajaxValue');
                 $.ajax({
-                    url : "http://113.198.137.82:10021/word_info/top_rank/?rank=1&cycle=bySubject&subject=Foreign%20Policy", // test.jsp 에서 받아옴
-                    dataType :"json", // 데이터타입을 json 으로 받아옴
+                    // type:"GET",
+                    url : "http://http://localhost:5000/", // test.jsp 에서 받아옴
+                    // data : params,
+                    dataType :"html", // 데이터타입을 json 으로 받아옴
                     crossOrigin: true,
                     success : function(data) {
-                        console.log(result.innerHTML = data);
+                        console.log(data);
                     },
                     error : function(e) {
                         console.log(e.responseText);
@@ -27,6 +46,7 @@
                 });
             });
     });
+                // $("#asdf").load("localhost:5000");
         </script>
 
 </head>
@@ -34,6 +54,7 @@
     <div id = "ajaxValue"> 
         <button id = "click">click</a>
     </div>
+<div id="asdf"></div>
 
     
    
