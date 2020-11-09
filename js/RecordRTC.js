@@ -2538,7 +2538,7 @@ function StereoAudioRecorder(mediaStream, config) {
     var recordingLength = 0;
     var jsAudioNode;
 
-    var numberOfAudioChannels = 2;
+    var numberOfAudioChannels = 1;
 
     /**
      * Set sample rates such as 8K or 16K. Reference: http://stackoverflow.com/a/28977136/552182

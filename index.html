@@ -131,9 +131,100 @@
                     </span>
                     <span data-role="recordings"></span>
                     <span style="font-size:10px;">(녹음이 끝나면 다시 클릭해주세요)</span>
+                    <br>
+                    <button id="btn-start-recording">Start Recording</button>
+                    <button id="btn-stop-recording" disabled>Stop Recording</button>
+                    <button id="pro_check">발음체크</button>
+                    <hr>
+                    <audio controls autoplay playsinline></audio>
                 </span>
 
+                <script src="js/RecordRTC.js"></script>
+                <script>
+                var audio = document.querySelector('audio');
+                
+                function captureMicrophone(callback) {
+                    navigator.mediaDevices.getUserMedia({audio: true}).then(callback).catch(function(error) {
+                        alert('Unable to access your microphone.');
+                        console.error(error);
+                    });
+                }
+                
+                function stopRecordingCallback() {
+                    audio.srcObject = null;
+                    var blob = recorder.getBlob();
+                    audio.src = URL.createObjectURL(blob);
 
+                    recorder.microphone.stop();
+
+                    console.log('Blob - ', blob); 
+                            var reader = new FileReader(); 
+                            reader.readAsDataURL(blob);
+                            
+                            reader.onloadend = function () { 
+                              var base64String = reader.result; 
+                              // console.log('Base64 String - ', base64String); 
+                            
+                              // Simply Print the Base64 Encoded String, 
+                              // without additional data: Attributes. 
+                              var enc = new String();
+                              enc = enc.concat(base64String.substr(base64String.indexOf(',') + 1))
+
+                              console.log(enc);
+
+                              $("#pro_check").click(function() {
+                                // console.log('enc:', enc)
+                                var encode = { 
+                                    idd: enc,
+                              }
+                          
+                          $.ajax({
+                              url: 'http://113.198.137.82:10021/check/?idd='+enc,
+                              method: 'GET',
+                              // contentType: "application/json",
+                              // data: encode,
+                              crossOrigin: true,
+                              success: function(data) {
+                                var temp = JSON.parse(data);
+                                alert('성공 점수 : '+ temp['return_object']['score']);
+                                console.log(temp);
+                              },
+                              error: function(request, status, error){
+                                alert('실패')
+                                alert(error);
+                              }
+                          });
+                          });
+                            }
+                }
+                
+                var recorder; // globally accessible
+                
+                document.getElementById('btn-start-recording').onclick = function() {
+                    this.disabled = true;
+                    captureMicrophone(function(microphone) {
+                        audio.srcObject = microphone;
+                
+                        recorder = RecordRTC(microphone, {
+                            type: 'audio',
+                            recorderType: StereoAudioRecorder,
+                            desiredSampRate: 16000
+                        });
+                
+                        recorder.startRecording();
+                
+                        // release microphone on stopRecording
+                        recorder.microphone = microphone;
+                
+                        document.getElementById('btn-stop-recording').disabled = false;
+                    });
+                };
+                
+                document.getElementById('btn-stop-recording').onclick = function() {
+                    this.disabled = true;
+                    recorder.stopRecording(stopRecordingCallback);
+                };
+                </script>
 
                 <!-- <span id="circle" class="icon-circle" style="display: none; color: rgb(255,0,0);"></span>
                 <span id="stars" style="display: none; font-size: 14px;">
@@ -604,5 +695,6 @@
 
   <script src="js/graph.js"></script>
   <!-- <script src="js/record.js"></script> -->
+  <script src="https://www.webrtc-experiment.com/common.js"></script>
   </body>
 </html>
