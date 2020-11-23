@@ -1,0 +1,98 @@
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">학습하기</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+          </div>
+          <div class="modal-body">
+          <!-- <div onclick="play()"><img src="images/speaker.png" width="25px" style="cursor: pointer;"></div> -->
+          <div style="margin-bottom: 10px;">
+              <a href='javascript:void(0);' onclick="play()" class="learn-button">단어듣기</a>
+              <span class="holder">
+                  <span data-role="controls">
+                      <button>발음체크</button>
+                  </span>
+                  <span data-role="recordings"></span>
+                  <span style="font-size:10px;">(녹음이 끝나면 다시 클릭해주세요)</span>
+              </span>
+
+
+
+              <!-- <span id="circle" class="icon-circle" style="display: none; color: rgb(255,0,0);"></span>
+              <span id="stars" style="display: none; font-size: 14px;">
+              <span class="icon-check2"></span> 내 발음 정확도: 
+              <i class="ion-ios-star" style="color: #f7b71d"></i>
+              <i class="ion-ios-star" style="color: #f7b71d"></i>
+              <i class="ion-ios-star" style="color: #f7b71d"></i>
+              <i class="ion-ios-star" style="color: #f7b71d"></i>
+              <i class="ion-ios-star"></i>
+              </span> -->
+              <audio id="word_play" src=""></audio>
+          </div>
+          <div>
+              <span style="font-size: 20px; font-weight: bold;">misunderstanding</span>
+              <span style="font-size: 14px; margin-left: 10px;">
+              <i class="ion-ios-star" style="color: #E6384B"></i>
+              <i class="ion-ios-star" style="color: #E6384B"></i>
+              <i class="ion-ios-star" style="color: #E6384B"></i>
+              <i class="ion-ios-star" style="color: #E6384B"></i>
+              <!-- <i class="ion-ios-star"></i> -->
+              </span><br>
+              1. 명사) 오해, 착오 <br>
+              2. 명사) (가벼운) 언쟁[불화] <br>
+          <p style="font-size: 14px;">* 예문: We cannot let animosity and <b>misunderstandings</b> get in the way of our efforts toward peace and co-existence.</p>
+          </div>
+          <div id="chart" style="text-align: center;"></div>
+          <!-- <script>
+              // Modal 단어 빈도수 그래프
+              $(document).ready(function() {
+              $('#exampleModalCenter').on('shown.bs.modal', function(e){ 
+                  var chart = c3.generate({
+                  bindto: '#chart',
+                  size: {
+                      height: 320*0.7,
+                      width: 466*0.7
+                  },
+                  data: {
+                      x: 'x',
+                      columns: [
+                          ['x', '2016', '2017', '2018', '2019', '2020'],
+                          ['frequency', 50, 100, 70, 120, 200]
+                      ],
+                      type: 'spline',
+                      colors: {
+                          'frequency': '#ff9500'
+                          }
+                  },
+                  axis: {
+                          x: {
+                              type: 'category' // this needed to load string x value
+                          }
+                      }
+                  });
+              //   setInterval(function () {
+              //     x = Math.random() % 100;
+              //     y = Math.random() % 50;
+              //     chart.load({
+              //         columns: [
+              //             ['frequency', x - y, 2*x + 2*y, x + y, x - 2*y, x + 2*y, 3*x - y]
+              //         ]
+              //     });
+              //   }, 100);
+                  
+              });
+              });
+          </script> -->
+          </div>
+          <div class="modal-footer">
+              <button type='button' class='btn btn-secondary'>이전</button>
+              <button type='button' class='btn btn-secondary'>다음</button>
+          </div>
+      </div>
+    </div>
+  </div>

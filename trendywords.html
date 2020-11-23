@@ -82,13 +82,14 @@
             <h1 class="mb-3 bread">Trendy Words</h1> <br>
             <p>* Word of the Year *</p>
             <div class="tagcloud">
-              <a href="#" data-toggle="modal" data-target="#exampleModalCenter" class="tag-cloud-link">CLIMATE EMERGENCY</a>
-              <a href="#" data-toggle="modal" data-target="#exampleModalCenter" class="tag-cloud-link">TOXIC</a>
-              <a href="#" data-toggle="modal" data-target="#exampleModalCenter" class="tag-cloud-link">YOUTHQUAKE</a>
-              <a href="#" data-toggle="modal" data-target="#exampleModalCenter" class="tag-cloud-link">POST-TRUTH</a>
-              <a href="#" data-toggle="modal" data-target="#exampleModalCenter" class="tag-cloud-link">😂</a>
-              <a href="#" data-toggle="modal" data-target="#exampleModalCenter" class="tag-cloud-link">vape</a>
-              <a href="#" data-toggle="modal" data-target="#exampleModalCenter" class="tag-cloud-link">selfie</a>
+              <!-- <a href="#" data-toggle="modal" data-target="#exampleModalCenter" class="tag-cloud-link">COVID-19</a> -->
+              <a href="#" class="tag-cloud-link">COVID-19</a>
+              <a href="#" class="tag-cloud-link">PANDEMIC</a>
+              <a href="#" class="tag-cloud-link">VACCINE</a>
+              <a href="#" class="tag-cloud-link">VIRUS</a>
+              <a href="#" class="tag-cloud-link">INFECTION</a>
+              <a href="#" class="tag-cloud-link">ELECTION</a>
+              <a href="#" class="tag-cloud-link">BTS</a>
             </div>
             </div>
           </div>
@@ -103,8 +104,9 @@
                 <div class="sidebar-box">
                   <form action="#" class="search-form">
                     <div class="form-group">
-                      <a id="searchbutton" data-toggle="pill" href="#pills-Search" role="tab" aria-controls="pills-Search" aria-expanded="true" style="color: black;"><span class="icon icon-search"></span></a>
+                      <a id="searchbutton" onclick='searchWord();' href="javascript:void(0);" data-toggle="modal" data-target="#exampleModalCenter" role="tab" aria-expanded="true" style="color: black;"><span class="icon icon-search"></span></a>
                       <input id="searchform" type="text" class="form-control" placeholder="Type a keyword and hit enter">
+                      <!-- <button type="button" onclick='searchWord();' id="searchbutton" class="btn btn-primary" data-id="search" data-toggle="modal" data-target="#exampleModalCenter"><span class="ion-ios-search modal-dialog modal-dialog-scrollable"></span></button> -->
                       <script> 
                         // Get the input field
                         var input = document.getElementById("searchform");
@@ -143,7 +145,7 @@
                         </li> -->
 
 
-                        <li class="nav-item"><a class="nav-link active" id="pills-ALL-tab" data-toggle="pill" href="#pills-ALL" role="tab" aria-controls="pills-ALL" aria-expanded="true">ALL </a></li>
+                        <li class="nav-item"><a class="nav-link active" id="pills-ALL-tab" data-toggle="pill" href="#pills-ALL" role="tab" aria-controls="pills-ALL" aria-expanded="true">2020. 11. </a></li>
                         <li class="nav-item"><a class="nav-link" id="pills-NatlPolitics-tab" data-toggle="pill" href="#pills-NatlPolitics" role="tab" aria-controls="pills-NatlPolitics" aria-expanded="true">Nat'l/Politics </a></li>
                         <li class="nav-item"><a class="nav-link" id="pills-World-tab" data-toggle="pill" href="#pills-World" role="tab" aria-controls="pills-World" aria-expanded="true">World </a></li>
                         <li class="nav-item"><a class="nav-link" id="pills-Economy-tab" data-toggle="pill" href="#pills-Economy" role="tab" aria-controls="pills-Economy" aria-expanded="true">Economy </a></li>
@@ -164,216 +166,89 @@
 
               <!-- ALL -->
               <div class="tab-pane fade show active" id="pills-ALL" role="tabpanel" aria-labelledby="pills-ALL-tab">
-                  <h3>ALL</h3>
-                  <p><a href="#" class="learn-button" data-id="word" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p>
+                  <h3>2020. 11.</h3>
+                  <br>
+                  <!-- <p><a href="#" class="learn-button" data-id="word" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p> -->
                   <div id="ALLAjax"></div>
-                  <!-- <div class="block-21 mb-4 d-flex">
-                    <a class="blog-img mr-4"><h3>1.</h3></a>
-                    <div class="text">
-                        <h2 class="heading"><a href="#" data-toggle="modal" data-target="#exampleModalCenter" style="font-size: 20px; font-weight: bold;">diversity</a><span style="font-size: 14px; margin-left: 10px;">다양성</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
-                        <p style="margin-bottom: 5px;"> ex) If we cannot now end our differences, at least we can help make the world safe for <b>diversity</b>. <a href="http://www.arirang.com/News/News_View.asp?nseq=260328" class="news_link">(관련 기사 보기)</a></p>
-                        <div class="meta">
-                            <div><span class="icon-chat"></span> Life/Culture</div>
-                        </div>
-                    </div>
-                  </div>
-                  <div class="block-21 mb-4 d-flex">
-                    <a class="blog-img mr-4"><h3>2.</h3></a>
-                    <div class="text">
-                        <h2 class="heading"><a href="#" data-toggle="modal" data-target="#exampleModalCenter" style="font-size: 20px; font-weight: bold;">digitalization</a><span style="font-size: 14px; margin-left: 10px;">디지털화</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
-                        <p style="margin-bottom: 5px;"> ex) South Korea's Digital New Deal focuses on creating a digital-based job market and speeding up the <b>digitalization</b> of the economy in the aftermath of the pandemic. <a href="http://www.arirang.com/News/News_View.asp?nSeq=260392" class="news_link">(관련 기사 보기)</a></p>
-                        <div class="meta">
-                            <div><span class="icon-chat"></span> IT/Science</div>
-                        </div>
-                    </div>
-                  </div>
-                  <div class="block-21 mb-4 d-flex">
-                    <a class="blog-img mr-4"><h3>3.</h3></a>
-                    <div class="text">
-                        <h2 class="heading"><a href="#" data-toggle="modal" data-target="#exampleModalCenter" style="font-size: 20px; font-weight: bold;">investment</a><span style="font-size: 14px; margin-left: 10px;">투자</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
-                        <p style="margin-bottom: 5px;"> ex) We've prepared the latest measures to prevent speculative <b>investment</b> and to protect those who buy houses for actual dwelling purposes. <a href="http://www.arirang.com/News/News_View.asp?nseq=260426" class="news_link">(관련 기사 보기)</a></p>
-                        <div class="meta">
-                            <div><span class="icon-chat"></span> Economy</div>
-                        </div>
-                    </div>
-                  </div>
-                  <div class="block-21 mb-4 d-flex">
-                      <a class="blog-img mr-4"><h3>4.</h3></a>
-                      <div class="text">
-                          <h2 class="heading"><a href="#" data-toggle="modal" data-target="#exampleModalCenter" style="font-size: 20px; font-weight: bold;">misunderstanding</a><span style="font-size: 14px; margin-left: 10px;">오해</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
-                          <p style="margin-bottom: 5px;"> ex) We cannot let animosity and <b>misunderstandings</b> get in the way of our efforts toward peace and co-existence. <a href="https://www.arirang.com/News/News_View.asp?nseq=260339" class="news_link">(관련 기사 보기)</a></p>
-                          <div class="meta">
-                              <div><span class="icon-chat"></span> Nat'l/Politics</div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="block-21 mb-4 d-flex">
-                      <a class="blog-img mr-4"><h3>5.</h3></a>
-                      <div class="text">
-                          <h2 class="heading"><a href="#" data-toggle="modal" data-target="#exampleModalCenter" style="font-size: 20px; font-weight: bold;">outbreak</a><span style="font-size: 14px; margin-left: 10px;">발생[발발]</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
-                          <p style="margin-bottom: 5px;"> ex) Beijing closes schools due to new COVID-19 <b>outbreak</b> <a href="http://www.arirang.com/News/News_View.asp?nseq=260447" class="news_link">(관련 기사 보기)</a></p>
-                          <div class="meta">
-                              <div><span class="icon-chat"></span> World</div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="block-21 mb-4 d-flex">
-                    <a class="blog-img mr-4"><h3>6.</h3></a>
-                    <div class="text">
-                        <h2 class="heading"><a href="#" data-toggle="modal" data-target="#exampleModalCenter" style="font-size: 20px; font-weight: bold;">postpone</a><span style="font-size: 14px; margin-left: 10px;">연기하다, 미루다</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
-                        <p style="margin-bottom: 5px;"> ex) The 2020 Games in Tokyo were set to start at the end of July, but it was <b>postponed</b> by a year due to the COVID-19 pandemic. <a href="http://www.arirang.com/News/News_View.asp?nseq=260101" class="news_link">(관련 기사 보기)</a></p>
-                        <div class="meta">
-                            <div><span class="icon-chat"></span> Sports</div>
-                        </div>
-                    </div>
-                  </div> -->
                   
               </div>
 
               <!-- Nat'l/Politics -->
               <div class="tab-pane fade" id="pills-NatlPolitics" role="tabpanel" aria-labelledby="pills-NatlPolitics-tab">
                       <h3>Nat'l/Politics</h3>
-                  <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p>
+                      <br>
+                  <!-- <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p> -->
                   <div id="NatlPoliticsAjax"></div>
-                  <!-- <div class="block-21 mb-4 d-flex">
-                      <a class="blog-img mr-4"><h3>1.</h3></a>
-                      <div class="text">
-                        <h2 class="heading"><a href="#" data-toggle="modal" data-target="#exampleModalCenter" style="font-size: 20px; font-weight: bold;">misunderstanding</a><span style="font-size: 14px; margin-left: 10px;">오해</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
-                        <p style="margin-bottom: 5px;"> ex) We cannot let animosity and <b>misunderstandings</b> get in the way of our efforts toward peace and co-existence. <a href="https://www.arirang.com/News/News_View.asp?nseq=260339" class="news_link">(관련 기사 보기)</a></p>
-                        <div class="meta">
-                            <div><span class="icon-chat"></span> Nat'l/Politics</div>
-                        </div>
-                      </div>
-                  </div> -->
                     
                 </div>
 
                 <!-- World -->
                 <div class="tab-pane fade" id="pills-World" role="tabpanel" aria-labelledby="pills-World-tab">
                     <h3>World</h3>
-                    <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p>
+                    <br>
+                    <!-- <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p> -->
                     <div id="WorldAjax"></div>
-                    <!-- <div class="block-21 mb-4 d-flex">
-                        <a class="blog-img mr-4"><h3>1.</h3></a>
-                        <div class="text">
-                            <h2 class="heading"><a href="#" data-toggle="modal" data-target="#exampleModalCenter" style="font-size: 20px; font-weight: bold;">outbreak</a><span style="font-size: 14px; margin-left: 10px;">오해</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
-                            <p style="margin-bottom: 5px;"> ex) Beijing closes schools due to new COVID-19 <b>outbreak</b> <a href="http://www.arirang.com/News/News_View.asp?nseq=260447" class="news_link">(관련 기사 보기)</a></p>
-                            <div class="meta">
-                                <div><span class="icon-chat"></span> World</div>
-                            </div>
-                        </div>
-                    </div> -->
 
                 </div>
                 
                 <!-- Economy -->
                 <div class="tab-pane fade" id="pills-Economy" role="tabpanel" aria-labelledby="pills-Economy-tab">
                   <h3>Economy</h3>
-                  <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p>
+                  <br>
+                  <!-- <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p> -->
                   <div id="EconomyAjax"></div>
-                  <!-- <div class="block-21 mb-4 d-flex">
-                      <a class="blog-img mr-4"><h3>1.</h3></a>
-                      <div class="text">
-                          <h2 class="heading"><a href="#" data-toggle="modal" data-target="#exampleModalCenter" style="font-size: 20px; font-weight: bold;">investment</a><span style="font-size: 14px; margin-left: 10px;">투자</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
-                          <p style="margin-bottom: 5px;"> ex) We've prepared the latest measures to prevent speculative <b>investment</b> and to protect those who buy houses for actual dwelling purposes. <a href="http://www.arirang.com/News/News_View.asp?nseq=260426" class="news_link">(관련 기사 보기)</a></p>
-                          <div class="meta">
-                              <div><span class="icon-chat"></span> Economy</div>
-                          </div>
-                      </div>
-                  </div> -->
                   
                 </div>
 
                 <!-- IT/Science -->
                 <div class="tab-pane fade" id="pills-ITScience" role="tabpanel" aria-labelledby="pills-ITScience-tab">
                   <h3>IT/Science</h3>
-                  <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p>
+                  <br>
+                  <!-- <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p> -->
                   <div id="ITScienceAjax"></div>
-                  <!-- <div class="block-21 mb-4 d-flex">
-                      <a class="blog-img mr-4"><h3>1.</h3></a>
-                      <div class="text">
-                        <h2 class="heading"><a href="#" data-toggle="modal" data-target="#exampleModalCenter" style="font-size: 20px; font-weight: bold;">digitalization</a><span style="font-size: 14px; margin-left: 10px;">디지털화</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
-                        <p style="margin-bottom: 5px;"> ex) South Korea's Digital New Deal focuses on creating a digital-based job market and speeding up the <b>digitalization</b> of the economy in the aftermath of the pandemic. <a href="http://www.arirang.com/News/News_View.asp?nSeq=260392" class="news_link">(관련 기사 보기)</a></p>
-                        <div class="meta">
-                            <div><span class="icon-chat"></span> IT/Science</div>
-                        </div>
-                      </div>
-                  </div> -->
-                    
+                  
                 </div>
 
                 <!-- Sports -->
                 <div class="tab-pane fade" id="pills-Sports" role="tabpanel" aria-labelledby="pills-Sports-tab">
                   <h3>Sports</h3>
-                  <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p>
+                  <br>
+                  <!-- <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p> -->
                   <div id="SportsAjax"></div>
-                  <!-- <div class="block-21 mb-4 d-flex">
-                      <a class="blog-img mr-4"><h3>1.</h3></a>
-                      <div class="text">
-                          <h2 class="heading"><a href="#" data-toggle="modal" data-target="#exampleModalCenter" style="font-size: 20px; font-weight: bold;">postpone</a><span style="font-size: 14px; margin-left: 10px;">연기하다, 미루다</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
-                          <p style="margin-bottom: 5px;"> ex) The 2020 Games in Tokyo were set to start at the end of July, but it was <b>postponed</b> by a year due to the COVID-19 pandemic. <a href="http://www.arirang.com/News/News_View.asp?nseq=260101" class="news_link">(관련 기사 보기)</a></p>
-                          <div class="meta">
-                              <div><span class="icon-chat"></span> Sports</div>
-                          </div>
-                      </div>
-                  </div> -->
-  
+                  
                 </div>
 
                 <!-- Life/Culture -->
                 <div class="tab-pane fade" id="pills-LifeCulture" role="tabpanel" aria-labelledby="pills-LifeCulture-tab">
                   <h3>Life/Culture</h3>
-                  <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p>
+                  <br>
+                  <!-- <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p> -->
                   <div id="LifeCultureAjax"></div>
-                  <!-- <div class="block-21 mb-4 d-flex">
-                      <a class="blog-img mr-4"><h3>1.</h3></a>
-                      <div class="text">
-                          <h2 class="heading"><a href="#" data-toggle="modal" data-target="#exampleModalCenter" style="font-size: 20px; font-weight: bold;">diversity</a><span style="font-size: 14px; margin-left: 10px;">다양성</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
-                          <p style="margin-bottom: 5px;"> ex) If we cannot now end our differences, at least we can help make the world safe for <b>diversity</b>. <a href="http://www.arirang.com/News/News_View.asp?nseq=260328" class="news_link">(관련 기사 보기)</a></p>
-                          <div class="meta">
-                              <div><span class="icon-chat"></span> Life/Culture</div>
-                          </div>
-                      </div>
-                  </div> -->
                   
                 </div>
 
                 <!-- Weather -->
                 <div class="tab-pane fade" id="pills-Weather" role="tabpanel" aria-labelledby="pills-Weather-tab">
                   <h3>Weather</h3>
-                  <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p>
+                  <br>
+                  <!-- <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p> -->
                   <div id="WeatherAjax"></div>
-                  <!-- <div class="block-21 mb-4 d-flex">
-                      <a class="blog-img mr-4"><h3>1.</h3></a>
-                      <div class="text">
-                        <h2 class="heading"><a href="#" data-toggle="modal" data-target="#exampleModalCenter" style="font-size: 20px; font-weight: bold;">postpone</a><span style="font-size: 14px; margin-left: 10px;">연기하다, 미루다</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
-                        <p style="margin-bottom: 5px;"> ex) The 2020 Games in Tokyo were set to start at the end of July, but it was <b>postponed</b> by a year due to the COVID-19 pandemic. <a href="http://www.arirang.com/News/News_View.asp?nseq=260101" class="news_link">(관련 기사 보기)</a></p>
-                        <div class="meta">
-                          <div><span class="icon-chat"></span> Weather</div>
-                      </div>
-                  </div> -->
+                  
                 </div>
 
                 <!-- Foreign Policy -->
                 <div class="tab-pane fade" id="pills-ForeignPolicy" role="tabpanel" aria-labelledby="pills-ForeignPolicy-tab">
                   <h3>Foreign Policy</h3>
-                  <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p>
+                  <br>
+                  <!-- <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p> -->
                   <div id="ForeignPolicyAjax"></div>
-		  <!-- <div class="block-21 mb-4 d-flex">
-                      <a class="blog-img mr-4"><h3>1.</h3></a>
-                      <div class="text">
-                        <h2 class="heading"><a href="#" data-toggle="modal" data-target="#exampleModalCenter" style="font-size: 20px; font-weight: bold;">postpone</a><span style="font-size: 14px; margin-left: 10px;">연기하다, 미루다</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
-                        <p style="margin-bottom: 5px;"> ex) The 2020 Games in Tokyo were set to start at the end of July, but it was <b>postponed</b> by a year due to the COVID-19 pandemic. <a href="http://www.arirang.com/News/News_View.asp?nseq=260101" class="news_link">(관련 기사 보기)</a></p>
-                        <div class="meta">
-                          <div><span class="icon-chat"></span> Sports</div>
-                      </div>
-                  </div> -->
+		 
                 </div>
 
               <!-- 검색 결과 -->
-              <div class="tab-pane fade" id="pills-Search" role="tabpanel" aria-labelledby="pills-Search-tab">
+              <!-- <div class="tab-pane fade" id="pills-Search" role="tabpanel" aria-labelledby="pills-Search-tab">
                 <h3>검색 결과</h3>
-                <!-- <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p> -->
+                
                 <div class="block-21 mb-4 d-flex">
                     <a class="blog-img mr-4"><h3>1.</h3></a>
                     <div class="text">
@@ -385,12 +260,41 @@
                     </div>
                 </div>
 
-            </div>
+            </div> -->
 
             </div> <!-- .col-md-8 -->
           
 
         </div>
+
+        <div id="all_audiolist">
+
+        </div>
+        <div id="nat_audiolist">
+
+        </div>
+        <div id="wor_audiolist">
+
+        </div>
+        <div id="eco_audiolist">
+
+        </div>
+        <div id="its_audiolist">
+
+        </div>
+        <div id="spo_audiolist">
+
+        </div>
+        <div id="lif_audiolist">
+
+        </div>
+        <div id="wea_audiolist">
+
+        </div>
+        <div id="for_audiolist">
+
+        </div>
+        
         <!-- <div class="col-md-3 sidebar ftco-animate">
           <div class="sidebar-box ftco-animate">
             <h3>Paragraph</h3>
@@ -401,9 +305,7 @@
     </div>
     </section> <!-- .section -->
 
-	  <!-- Modal -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-
 
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -416,16 +318,22 @@
             <div class="modal-body">
             <!-- <div onclick="play()"><img src="images/speaker.png" width="25px" style="cursor: pointer;"></div> -->
             <div style="margin-bottom: 10px;">
-                <a href='javascript:void(0);' onclick="play()" class="learn-button">단어듣기</a>
-                <span class="holder">
-                    <span data-role="controls">
-                        <button>발음체크</button>
-                    </span>
-                    <span data-role="recordings"></span>
-                    <span style="font-size:10px;">(녹음이 끝나면 다시 클릭해주세요)</span>
-                </span>
-
-
+                <a href='javascript:void(0);' onclick="play(this)" class="learn-button">단어듣기</a>
+                <div id="controls">
+                  <button id="recordButton" type="button" class='btn btn-secondary'>Record</button>
+                  <button id="pauseButton" class='btn btn-secondary' disabled>Pause</button>
+                  <button id="stopButton" class='btn btn-secondary' disabled>Stop</button>
+                  <span id="score"><strong>점수: </strong></span>
+                 </div>
+                 <br>
+                 <!-- <div id="formats">Format: start recording to see sample rate</div> -->
+                 
+                 <!-- <p><strong>Recordings:</strong></p> -->
+                 <ol id="recordingsList"></ol>
+                 <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
+                 <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+                 <script src="js/reco.js"></script>
+                <hr>
 
                 <!-- <span id="circle" class="icon-circle" style="display: none; color: rgb(255,0,0);"></span>
                 <span id="stars" style="display: none; font-size: 14px;">
@@ -436,247 +344,46 @@
                 <i class="ion-ios-star" style="color: #f7b71d"></i>
                 <i class="ion-ios-star"></i>
                 </span> -->
-                <audio id="audio_play" src="v.mp3"></audio>
+                <audio id="word_play" src=""></audio>
             </div>
             <div>
-                <span style="font-size: 20px; font-weight: bold;">misunderstanding</span>
-                <span style="font-size: 14px; margin-left: 10px;">
+                <span id="word" style="font-size: 20px; font-weight: bold;"> </span>
+                <!-- <script>
+                  console.log(document.getElementById("word").textContent);
+                </script> -->
+
+                <!-- <span style="font-size: 14px; margin-left: 10px;">
                 <i class="ion-ios-star" style="color: #E6384B"></i>
                 <i class="ion-ios-star" style="color: #E6384B"></i>
                 <i class="ion-ios-star" style="color: #E6384B"></i>
                 <i class="ion-ios-star" style="color: #E6384B"></i>
-                <!-- <i class="ion-ios-star"></i> -->
-                </span><br>
-                1. 명사) 오해, 착오 <br>
-                2. 명사) (가벼운) 언쟁[불화] <br>
-            <p style="font-size: 14px;">* 예문: We cannot let animosity and <b>misunderstandings</b> get in the way of our efforts toward peace and co-existence.</p>
+                <i class="ion-ios-star"></i>
+                </span> -->
+                <div id="word_mean">
+                  
+                </div>
+                <div id="word_sentence">
+
+                </div>
+                <div id="word_Ksentence">
+
+                </div>
+                
             </div>
             <div id="chart" style="text-align: center;"></div>
-            <!-- <script>
-                // Modal 단어 빈도수 그래프
-                $(document).ready(function() {
-                $('#exampleModalCenter').on('shown.bs.modal', function(e){ 
-                    var chart = c3.generate({
-                    bindto: '#chart',
-                    size: {
-                        height: 320*0.7,
-                        width: 466*0.7
-                    },
-                    data: {
-                        x: 'x',
-                        columns: [
-                            ['x', '2016', '2017', '2018', '2019', '2020'],
-                            ['frequency', 50, 100, 70, 120, 200]
-                        ],
-                        type: 'spline',
-                        colors: {
-                            'frequency': '#ff9500'
-                            }
-                    },
-                    axis: {
-                            x: {
-                                type: 'category' // this needed to load string x value
-                            }
-                        }
-                    });
-                //   setInterval(function () {
-                //     x = Math.random() % 100;
-                //     y = Math.random() % 50;
-                //     chart.load({
-                //         columns: [
-                //             ['frequency', x - y, 2*x + 2*y, x + y, x - 2*y, x + 2*y, 3*x - y]
-                //         ]
-                //     });
-                //   }, 100);
-                    
-                });
-                });
-            </script> -->
+            
             </div>
             <div class="modal-footer">
-                <button type='button' class='btn btn-secondary'>이전</button>
-                <button type='button' class='btn btn-secondary'>다음</button>
+              <div class="buttons">
+                <button type='button' onclick='preButton(this);' class='btn btn-secondary'>이전</button>
+                <button type='button' onclick='nextButton(this);' class='btn btn-secondary'>다음</button>
+              </div>
             </div>
         </div>
       </div>
     </div>
-
-    <script>
-      jQuery(document).ready(function () {
-        var $ = jQuery;
-        var myRecorder = {
-            objects: {
-                context: null,
-                stream: null,
-                recorder: null
-            },
-            init: function () {
-                if (null === myRecorder.objects.context) {
-                    myRecorder.objects.context = new (
-                        window.AudioContext || window.webkitAudioContext
-                    );
-                }
-            },
-            start: function () {
-                var options = {audio: {desiredSampRate: 16 * 1000}, video: false};
-                navigator.mediaDevices.getUserMedia(options).then(function (stream) {
-                    myRecorder.objects.stream = stream;
-                    myRecorder.objects.recorder = new Recorder(
-                        myRecorder.objects.context.createMediaStreamSource(stream),
-                        {numChannels: 1}
-                    );
-                    myRecorder.objects.recorder.record();
-                }).catch(function (err) {});
-            },
-            stop: function (listObject) {
-                if (null !== myRecorder.objects.stream) {
-                    myRecorder.objects.stream.getAudioTracks()[0].stop();
-                }
-                if (null !== myRecorder.objects.recorder) {
-
-                    myRecorder.objects.recorder.stop();
-
-                    // Validate object
-                    if (null !== listObject
-                            && 'object' === typeof listObject
-                            && listObject.length > 0) {
-                        // Export the WAV file
-                        myRecorder.objects.recorder.exportWAV(function (blob) {
-                            var url = (window.URL || window.webkitURL)
-                                    .createObjectURL(blob);
-
-                            // Prepare the playback
-                            var audioObject = $('<audio controls></audio>')
-                                    .attr('src', url);
-
-                            // Prepare the download link
-                            var downloadObject = $('<a>&#9660;</a>')
-                                    .attr('href', url)
-                                    .attr('download', new Date().toUTCString() + '.wav');
-                            
-                            var check = $('<button id="pro_check">발음체크</button>')
-
-// Wrap everything in a row
-var holderObject = $('<div class="row"></div>')
-        .append(audioObject)
-        .append(downloadObject)
-        .append(check);
-
-// Append to the list
-listObject.append(holderObject);
-console.log('Blob - ', blob); 
-var reader = new FileReader(); 
-reader.readAsDataURL(blob);
-
-// var reader2 = new FileReader();
-// reader2.readAsText(blob);
-
-reader.onloadend = function () { 
-  var base64String = reader.result; 
-  // console.log('Base64 String - ', base64String); 
-
-  // Simply Print the Base64 Encoded String, 
-  // without additional data: Attributes. 
-  // console.log('Base64 String without Tags- ', base64String.substr(base64String.indexOf(', ') + 23));
-  // base64String.substr(base64String.indexOf(', ') + 23)
-  var enc = new String();
-  enc = enc.concat(base64String.substr(base64String.indexOf(',') + 1))
-
-  // console.log('enc;', enc)
-  console.log(enc);
-
-  $("#pro_check").click(function() {
-    // console.log('enc:', enc)
-    var encode = { 
-        idd: blob,
-  }
-
-    //console.log(enc)
-
-// $.ajax({
-//     url: 'http://113.198.137.82:10021/check',
-//     // method: 'GET',
-//     // contentType: "application/json",
-//     dataType: 'json',
-//     data: encode,
-//     crossOrigin: true,
-//     success: function(data) {
-//       alert('성공:'+data.result)
-//       console.log(data.result)
-
-//     },
-//     error: function(request, status, error){
-//       alert('실패')
-//       alert(error);
-//     }
-// });
-// });
-
-
-$.ajax({
-  url: 'http://113.198.137.82:10021/check/?idd='+enc,
-  method: 'GET',
-  // contentType: "application/json",
-  // headers: {  'Access-Control-Allow-Origin': '*' },
-  // method: 'GET',
-  // data: encode,
-  crossOrigin: true,
-  success: function(data) {
-    var temp = JSON.parse(data);
-    alert('성공 점수 : '+ temp['return_object']['score']);
-    console.log(temp);
-  },
-  error: function(request, status, error){
-    alert('실패')
-    alert(error);
-  }
-});
-});
-}
-
-});
-
-}
-}
-}
-};
-        //                     // Wrap everything in a row
-        //                     var holderObject = $('<div class="row"></div>')
-        //                             .append(audioObject)
-        //                             .append(downloadObject);
-
-        //                     // Append to the list
-        //                     listObject.append(holderObject);
-        //                 });
-
-        //             }
-        //         }
-        //     }
-        // };
-
-        // Prepare the recordings list
-        var listObject = $('[data-role="recordings"]');
-
-        // Prepare the record button
-        $('[data-role="controls"] > button').click(function () {
-            // Initialize the recorder
-            myRecorder.init();
-
-            // Get the button state
-            var buttonState = !!$(this).attr('data-recording');
-
-            // Toggle
-            if (!buttonState) {
-                $(this).attr('data-recording', 'true');
-                myRecorder.start();
-            } else {
-                $(this).attr('data-recording', '');
-                myRecorder.stop(listObject);
-            }
-        });
-    });
-    </script>
-
+    
+    
     <footer class="ftco-footer ftco-section">
       <div class="container">
         <div class="row mb-3">
@@ -782,7 +489,7 @@ $.ajax({
 
   <!-- 따로 작성한 js 적용 -->
   
-  <script src="js/index.js"></script>
+  <script src="js/in.js"></script>
   <script src="js/ajax.js"></script>
   <script src="js/trendywords.js"></script>
   <script src="js/graph.js"></script>

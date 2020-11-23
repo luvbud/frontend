@@ -3,6 +3,7 @@
   <head>
     <title>Trendy Words !</title>
     <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900&display=swap" rel="stylesheet">
@@ -92,7 +93,7 @@
                             }
                           });
                         </script>
-                        <button type="button" id="searchbutton" class="btn btn-primary" data-id="search" data-toggle="modal" data-target="#exampleModalCenter"><span class="ion-ios-search modal-dialog modal-dialog-scrollable"></span></button>
+                        <button type="button" onclick='searchWord(this);' id="searchbutton" class="btn btn-primary" data-id="search" data-toggle="modal" data-target="#exampleModalCenter"><span class="ion-ios-search modal-dialog modal-dialog-scrollable"></span></button>
                       </div>
 			              </div>
 		        			</div>
@@ -110,7 +111,6 @@
     </div>
     <!-- Modal -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      
 
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -123,35 +123,25 @@
             <div class="modal-body">
             <!-- <div onclick="play()"><img src="images/speaker.png" width="25px" style="cursor: pointer;"></div> -->
             <div style="margin-bottom: 10px;">
-                <!-- <a href='javascript:void(0);' onclick="play()" class="learn-button">단어듣기</a> -->
-                <!-- <span class="holder">
-                    <span data-role="controls">
-                        <button>발음체크</button>
-                    </span>
-                    <span data-role="recordings"></span>
-                    <span style="font-size:10px;">(녹음이 끝나면 다시 클릭해주세요)</span>
-                    <br> -->
-                    <span style="font-size: 20px; font-weight: bold;">misunderstanding</span>
-                    <a href='javascript:void(0);' onclick="play()" class="learn-button">단어듣기</a>
-                    <div id="controls">
-                      <button id="recordButton" type="button" class='btn btn-secondary'>Record</button>
-                      <button id="pauseButton" class='btn btn-secondary' disabled>Pause</button>
-                      <button id="stopButton" class='btn btn-secondary' disabled>Stop</button>
-                      <span id="score"><strong>점수: </strong></span>
-                     </div>
-                     <br>
-                     <!-- <div id="formats">Format: start recording to see sample rate</div> -->
-                     
-                     <!-- <p><strong>Recordings:</strong></p> -->
-                     <ol id="recordingsList"></ol>
-                     <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
-                     <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
-                     <script src="js/reco.js"></script>
-                    <hr>
-                    <!-- <input type="file" id="soundFileInput" class="soundFileInput" accept="audio/*" @change="onAudioSelected" /> -->
-                    <!-- <audio controls autoplay playsinline></audio> -->
-                </span>
-
+                <a href='javascript:void(0);' onclick="play(this)" class="learn-button">단어듣기</a>
+                <div id="controls">
+                  <button id="recordButton" type="button" class='btn btn-secondary'>Record</button>
+                  <button id="pauseButton" class='btn btn-secondary' disabled>Pause</button>
+                  <button id="stopButton" class='btn btn-secondary' disabled>Stop</button>
+                  <span id="score"><strong>점수: </strong></span>
+                 </div>
+                 <br>
+                 <!-- <div id="formats">Format: start recording to see sample rate</div> -->
+                 
+                 <!-- <p><strong>Recordings:</strong></p> -->
+                 <ol id="recordingsList"></ol>
+                 <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
+                 <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+                 <script src="js/reco.js"></script>
+                <hr>
+  
+  
+  
                 <!-- <span id="circle" class="icon-circle" style="display: none; color: rgb(255,0,0);"></span>
                 <span id="stars" style="display: none; font-size: 14px;">
                 <span class="icon-check2"></span> 내 발음 정확도: 
@@ -161,20 +151,33 @@
                 <i class="ion-ios-star" style="color: #f7b71d"></i>
                 <i class="ion-ios-star"></i>
                 </span> -->
-                <audio id="audio_play" src="v.mp3"></audio>
+                <audio id="word_play" src=""></audio>
             </div>
             <div>
-                <!-- <span style="font-size: 20px; font-weight: bold;">misunderstanding</span>
-                <span style="font-size: 14px; margin-left: 10px;">
+                <span id="word" style="font-size: 20px; font-weight: bold;"> </span>
+                <!-- <script>
+                  console.log(document.getElementById("word").textContent);
+                </script> -->
+
+                <!-- <span style="font-size: 14px; margin-left: 10px;">
                 <i class="ion-ios-star" style="color: #E6384B"></i>
                 <i class="ion-ios-star" style="color: #E6384B"></i>
                 <i class="ion-ios-star" style="color: #E6384B"></i>
-                <i class="ion-ios-star" style="color: #E6384B"></i> 
+                <i class="ion-ios-star" style="color: #E6384B"></i>
+                <i class="ion-ios-star"></i>
+                </span> -->
+                <div id="word_mean">
+                  <!-- 1. 명사) 오해, 착오 <br>
+                  2. 명사) (가벼운) 언쟁[불화] <br>
+              <p style="font-size: 14px;">* 예문: We cannot let animosity and <b>misunderstandings</b> get in the way of our efforts toward peace and co-existence.</p> -->
+                </div>
+                <div id="word_sentence">
+
+                </div>
+                <div id="word_Ksentence">
+
+                </div>
                 
-                </span><br> -->
-                1. 명사) 오해, 착오 <br>
-                2. 명사) (가벼운) 언쟁[불화] <br>
-            <p style="font-size: 14px;">* 예문: We cannot let animosity and <b>misunderstandings</b> get in the way of our efforts toward peace and co-existence.</p>
             </div>
             <div id="chart" style="text-align: center;"></div>
             <!-- <script>
@@ -219,14 +222,14 @@
             </script> -->
             </div>
             <div class="modal-footer">
-                <button type='button' class='btn btn-secondary' data-dismiss='modal'>닫기</button>
-                <button type='button' class='btn btn-primary' onclick='location.href=trendywords.html'>더 학습하기</button>
+              <!-- <div id = "buttons"> -->
+              <button type='button' class='btn btn-light' data-dismiss='modal'>닫기</button>
+              <a href="trendywords.html"><button type='button' class='btn btn-primary'>더 학습하기</button></a>
+            <!-- </div> -->
             </div>
         </div>
       </div>
     </div>
- 
-
     
     <section class="ftco-section goto-here" style="padding: 6em 0;">
       <div class="container">
@@ -435,7 +438,8 @@
   <script src="js/main.js"></script>
 
   <!-- 따로 작성한 js 적용 -->
-  <script src="js/index.js"></script>
+  <script src="js/in.js"></script>
+
   <!-- <script src="js/ajax.js"></script> -->
 
   <script src="js/graph.js"></script>
