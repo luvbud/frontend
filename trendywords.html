@@ -60,11 +60,7 @@
 	          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
             <li class="nav-item active"><a href="trendywords.html" class="nav-link">Start Learn</a></li>
             <li class="nav-item"><a href="game.html" class="nav-link">Game</a></li>
-	          <!-- <li class="nav-item"><a href="#" class="nav-link" title="구현 중">Log In</a></li> -->
-	          <!-- <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-	          <li class="nav-item"><a href="properties.html" class="nav-link">Properties</a></li>
-	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li> -->
+	          
 	        </ul>
 	      </div>
 	    </div>
@@ -134,17 +130,6 @@
                     </a>
                     <div class="collapse" id="collapseExample">
                     <ul class="nav nav-pills mb-3">
-                        <!--       
-                        <li class="nav-item">
-                          <a class="nav-link active" id="pills-description-tab" data-toggle="pill" href="#pills-description" role="tab" aria-controls="pills-description" aria-expanded="true">Features</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" id="pills-manufacturer-tab" data-toggle="pill" href="#pills-manufacturer" role="tab" aria-controls="pills-manufacturer" aria-expanded="true">Description</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" id="pills-review-tab" data-toggle="pill" href="#pills-review" role="tab" aria-controls="pills-review" aria-expanded="true">Review</a>
-                        </li> -->
-
 
                         <li class="nav-item"><a class="nav-link active" id="pills-ALL-tab" data-toggle="pill" href="#pills-ALL" role="tab" aria-controls="pills-ALL" aria-expanded="true">2020. 11. </a></li>
                         <li class="nav-item"><a class="nav-link" id="pills-NatlPolitics-tab" data-toggle="pill" href="#pills-NatlPolitics" role="tab" aria-controls="pills-NatlPolitics" aria-expanded="true">Nat'l/Politics </a></li>
@@ -171,7 +156,7 @@
                   <br>
                   <!-- <p><a href="#" class="learn-button" data-id="word" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p> -->
                   <div id="ALLAjax"></div>
-                  <button id="showmore" onclick="drawList();" type="button">show more</button>
+                  <button id="showmore" onclick="drawList('all','ALLAjax');" type="button">show more</button>
                   <br>
               </div>
 
@@ -181,6 +166,7 @@
                       <br>
                   <!-- <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p> -->
                   <div id="NatlPoliticsAjax"></div>
+                  <button id="showmore" onclick="drawList('nat','NatlPoliticsAjax');" type="button">show more</button>
                     
                 </div>
 
@@ -190,6 +176,7 @@
                     <br>
                     <!-- <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p> -->
                     <div id="WorldAjax"></div>
+                    <button id="showmore" onclick="drawList('wor','WorldAjax');" type="button">show more</button>
 
                 </div>
                 
@@ -199,6 +186,7 @@
                   <br>
                   <!-- <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p> -->
                   <div id="EconomyAjax"></div>
+                  <button id="showmore" onclick="drawList('eco','EconomyAjax');" type="button">show more</button>
                   
                 </div>
 
@@ -208,6 +196,7 @@
                   <br>
                   <!-- <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p> -->
                   <div id="ITScienceAjax"></div>
+                  <button id="showmore" onclick="drawList('its','ITScienceAjax');" type="button">show more</button>
                   
                 </div>
 
@@ -217,6 +206,7 @@
                   <br>
                   <!-- <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p> -->
                   <div id="SportsAjax"></div>
+                  <button id="showmore" onclick="drawList('spo','SportsAjax');" type="button">show more</button>
                   
                 </div>
 
@@ -226,6 +216,7 @@
                   <br>
                   <!-- <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p> -->
                   <div id="LifeCultureAjax"></div>
+                  <button id="showmore" onclick="drawList('lif','LifeCultureAjax');" type="button">show more</button>
                   
                 </div>
 
@@ -235,6 +226,7 @@
                   <br>
                   <!-- <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p> -->
                   <div id="WeatherAjax"></div>
+                  <button id="showmore" onclick="drawList('wea','WeatherAjax');" type="button">show more</button>
                   
                 </div>
 
@@ -244,27 +236,12 @@
                   <br>
                   <!-- <p><a href="#" class="learn-button" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p> -->
                   <div id="ForeignPolicyAjax"></div>
+                  <button id="showmore" onclick="drawList('for','ForeignPolicyAjax');" type="button">show more</button>
 		 
                 </div>
 
-              <!-- 검색 결과 -->
-              <!-- <div class="tab-pane fade" id="pills-Search" role="tabpanel" aria-labelledby="pills-Search-tab">
-                <h3>검색 결과</h3>
-                
-                <div class="block-21 mb-4 d-flex">
-                    <a class="blog-img mr-4"><h3>1.</h3></a>
-                    <div class="text">
-                        <h2 class="heading"><a href="#" data-toggle="modal" data-target="#exampleModalCenter" style="font-size: 20px; font-weight: bold;">outbreak</a><span style="font-size: 14px; margin-left: 10px;">오해</span> <a href="#" style="margin-left: 10px;"><span class="icon-volume-up"></span></a></h2>
-                        <p style="margin-bottom: 5px;"> ex) Beijing closes schools due to new COVID-19 <b>outbreak</b> <a href="http://www.arirang.com/News/News_View.asp?nseq=260447" class="news_link">(관련 기사 보기)</a></p>
-                        <div class="meta">
-                            <div><span class="icon-chat"></span> World</div>
-                        </div>
-                    </div>
-                </div>
 
-            </div> -->
-
-            </div> <!-- .col-md-8 -->
+            </div> 
           
 
         </div>
@@ -297,15 +274,10 @@
 
         </div>
         
-        <!-- <div class="col-md-3 sidebar ftco-animate">
-          <div class="sidebar-box ftco-animate">
-            <h3>Paragraph</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
-          </div>
-          </div> -->
+
       </div>
     </div>
-    </section> <!-- .section -->
+    </section> 
 
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 
@@ -338,17 +310,7 @@
                   <button id="stopButton" disabled style="border: none; outline: none; background: none; cursor: pointer; padding: 2px 12px;"><span class="icon-stop"></span></button>
                   <span id="score"><strong>SCORE </strong></span>
                  </div>
-                <!-- <script>
-                  console.log(document.getElementById("word").textContent);
-                </script> -->
 
-                <!-- <span style="font-size: 14px; margin-left: 10px;">
-                <i class="ion-ios-star" style="color: #E6384B"></i>
-                <i class="ion-ios-star" style="color: #E6384B"></i>
-                <i class="ion-ios-star" style="color: #E6384B"></i>
-                <i class="ion-ios-star" style="color: #E6384B"></i>
-                <i class="ion-ios-star"></i>
-                </span> -->
                 <div id="word_mean" style="font-size: 10px;">
                   
                 </div>
@@ -362,10 +324,7 @@
             </div>
                 
                 
-                 <!-- <br> -->
-                 <!-- <div id="formats">Format: start recording to see sample rate</div> -->
-                 
-                 <!-- <p><strong>Recordings:</strong></p> -->
+           
                  <ol id="recordingsList"></ol>
                  <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
                  <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
@@ -373,15 +332,6 @@
                  <script src=""></script>
                 <!-- <hr> -->
 
-                <!-- <span id="circle" class="icon-circle" style="display: none; color: rgb(255,0,0);"></span>
-                <span id="stars" style="display: none; font-size: 14px;">
-                <span class="icon-check2"></span> 내 발음 정확도: 
-                <i class="ion-ios-star" style="color: #f7b71d"></i>
-                <i class="ion-ios-star" style="color: #f7b71d"></i>
-                <i class="ion-ios-star" style="color: #f7b71d"></i>
-                <i class="ion-ios-star" style="color: #f7b71d"></i>
-                <i class="ion-ios-star"></i>
-                </span> -->
                 <audio id="word_play" src=""></audio>
             </div>
             
@@ -487,14 +437,13 @@
   <script src="js/bootstrap-datepicker.js"></script>
   <script src="js/jquery.timepicker.min.js"></script>
   <script src="js/scrollax.min.js"></script>
-  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script> -->
-  <!-- <script src="js/google-map.js"></script> -->
+
   <script src="js/main.js"></script>
 
   <!-- 따로 작성한 js 적용 -->
   
   <script src="js/in.js?ver=20201125"></script>
-  <script src="js/ajax.js?ver=21"></script>
+  <script src="js/ajax.js?ver=2"></script>
   <script src="js/trendywords.js"></script>
   <script src="js/graph.js?ver=232"></script>
 

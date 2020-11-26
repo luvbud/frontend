@@ -53,6 +53,23 @@
     display: none;
 }
 
+#result-text {
+    /* background: rgba(0, 0, 0, 0.5); */
+    bottom: 50%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 45%;
+    z-index: 100;
+    color: salmon;
+    font-size: 30px;
+    font-weight: bold;
+}
+#result-text:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 #result {
 /* 
     background: linear-gradient(#eee, #ffe8a1);
@@ -61,13 +78,14 @@
     background: -moz-linear-gradient(top, #eee, #ffe8a1);
     background: -o-linear-gradient(top, #eee, #ffe8a1); */
     /* background: rgba(0, 0, 0, 0.2); */
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
     bottom: 0;
     left: 0;
     position: absolute;
     right: 0;
     top: 0;
-    z-index: 100;
+    z-index: 99;
+    
 }
 
 #result[data="true"] {
@@ -327,11 +345,6 @@
     display: none;
 }
 
-#pGame {
-    /* height: 1000px; */
-    /* margin: 200px; */
-
-}
 #tastatur {
     /* background-color: rgba(238, 238, 238, 0.9); */
     bottom: 0;
