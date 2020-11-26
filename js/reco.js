@@ -8,11 +8,11 @@ var AudioContext = window.AudioContext || window.webkitAudioContext;
 var audioContext //audio context to help us record
 var recordButton = document.getElementById("recordButton");
 var stopButton = document.getElementById("stopButton");
-var pauseButton = document.getElementById("pauseButton");
+// var pauseButton = document.getElementById("pauseButton");
 //add events to those 2 buttons
 recordButton.addEventListener("click", startRecording);
 stopButton.addEventListener("click", stopRecording);
-pauseButton.addEventListener("click", pauseRecording);
+// pauseButton.addEventListener("click", pauseRecording);
 function startRecording() {
     console.log("recordButton clicked");
     /*
@@ -25,7 +25,8 @@ function startRecording() {
     */
     recordButton.disabled = true;
     stopButton.disabled = false;
-    pauseButton.disabled = false
+    recordButton.style.background="rgba(252, 186, 3)";
+    // pauseButton.disabled = false
     /*
         We're using the standard promise based getUserMedia() 
         https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
@@ -58,29 +59,30 @@ function startRecording() {
         //enable the record button if getUserMedia() fails
         recordButton.disabled = false;
         stopButton.disabled = true;
-        pauseButton.disabled = true
+        // pauseButton.disabled = true
     });
 }
-function pauseRecording(){
-    console.log("pauseButton clicked rec.recording=",rec.recording );
-    if (rec.recording){
-        //pause
-        rec.stop();
-        pauseButton.innerHTML="Resume";
-    }else{
-        //resume
-        rec.record()
-        pauseButton.innerHTML="Pause";
-    }
-}
+// function pauseRecording(){
+//     console.log("pauseButton clicked rec.recording=",rec.recording );
+//     if (rec.recording){
+//         //pause
+//         rec.stop();
+//         pauseButton.innerHTML="Resume";
+//     }else{
+//         //resume
+//         rec.record()
+//         pauseButton.innerHTML="Pause";
+//     }
+// }
 function stopRecording() {
     console.log("stopButton clicked");
     //disable the stop button, enable the record too allow for new recordings
     stopButton.disabled = true;
     recordButton.disabled = false;
-    pauseButton.disabled = true;
+    recordButton.style.background="none";
+    // pauseButton.disabled = true;
     //reset button just in case the recording is stopped while paused
-    pauseButton.innerHTML="Pause";
+    // pauseButton.innerHTML="Pause";
     //tell the recorder to stop the recording
     rec.stop();
     //stop microphone access
@@ -93,6 +95,7 @@ function createDownloadLink(blob) {
     var au = document.createElement('audio');
     var li = document.createElement('li');
     var link = document.createElement('a');
+
     //name of .wav file to use during upload and download (without extendion)
     var filename = new Date().toISOString();
     //add controls to the <audio> element
@@ -101,17 +104,21 @@ function createDownloadLink(blob) {
     //save to disk link
     link.href = url;
     link.download = filename+".wav"; //download forces the browser to donwload the file using the  filename
-    link.innerHTML = "Save to disk";
+    link.innerHTML = "다운로드";
+
     //add the new audio element to li
     li.appendChild(au);
     //add the filename to the li
+    li.appendChild(document.createElement('br'));
     li.appendChild(document.createTextNode(filename+".wav "))
     //add the save to disk link to li
     li.appendChild(link);
     //upload link
+    li.style.fontSize = "10px";
+
     var upload = document.createElement('a');
     upload.href="#";
-    upload.innerHTML = "Check";
+    upload.innerHTML = "발음체크";
     upload.addEventListener("click", function(event){
           var xhr=new XMLHttpRequest();
           xhr.onload=function(e) {
@@ -123,17 +130,32 @@ function createDownloadLink(blob) {
                   console.log(api_result["return_object"]["score"]);
                   var score = api_result["return_object"]["score"];
                 //   alert("점수: " + score.toFixed(1) + "점");
-                  document.getElementById("score").innerHTML="<strong>점수: "+score.toFixed(1) + "점</strong>";
+                  document.getElementById("score").innerHTML="<strong>SCORE "+score.toFixed(1) + " / 5.0</strong>";
               }
           };
           var fd=new FormData();
           fd.append('audio_data', blob, filename);
           xhr.open('POST', 'http://113.198.137.82:10021/check/',true);
           xhr.send(fd);
+    
     });
 
-    li.appendChild(document.createTextNode (" "))//add a space in between
+    var remove = document.createElement('a');
+    remove.href="#";
+    remove.innerHTML = "삭제";
+    remove.addEventListener("click", function(event){    
+        remove.parentNode.remove();
+    });
+
+    li.appendChild(document.createTextNode (" / "))//add a space in between
     li.appendChild(upload)//add the upload link to li
+    li.appendChild(document.createTextNode (" / "))//add a space in between
+    li.appendChild(remove)//add the upload link to li
+
+    link.style.fontSize = "14px";
+    upload.style.fontSize = "14px";
+    remove.style.fontSize = "14px";
+    
     //add the li element to the ol
     recordingsList.appendChild(li);
 }

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>Trendy Words !</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="js/jquery.ajax-cross-origin.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css?ver=10">
+    <link rel="shortcut icon" type="image⁄x-icon" href="images/icon1.png">
+    <script src="js/gameofhang.js?ver=4"></script>
+
+    <link rel="stylesheet" href="css/gameofhang.css?ver=4">
+
+        
+    </head>
+    <body>
+        
+        <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+            <div class="container">
+              <a class="navbar-brand" href="index.html">Trendy Words</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+              </button>
+    
+              <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="trendywords.html" class="nav-link">Start Learn</a></li>
+                <li class="nav-item active"><a id="game"><a href="game.html" class="nav-link">Game</a></a></li>
+                 
+                </ul>
+              </div>
+            </div>
+          </nav>
+  <!-- END nav -->
+    <section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" style="background-image: url('images/MegaTron.jpg');" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
+            <div class="col-md-9 ftco-animate pb-5 text-center">
+                <span>Game <i class="ion-ios-arrow-forward"></i></span></p>
+            <h1 class="mb-3 bread">Hangman</h1> <br id="br">
+            <!-- <p>Play a game!</p> -->
+            <div class="tagcloud">
+                <!-- <a href="#" data-toggle="modal" data-target="#exampleModalCenter" class="tag-cloud-link">COVID-19</a> -->
+                <a href="#" class="tag-cloud-link">LET'S</a>
+                <a href="#" class="tag-cloud-link">PLAY</a>
+                <a href="#" class="tag-cloud-link">A</a>
+                <a href="#" class="tag-cloud-link">HANGMAN</a>
+                <a href="#" class="tag-cloud-link">GAME</a>
+                <a href="#" class="tag-cloud-link">😂</a>
+                <a href="#" class="tag-cloud-link">!</a>
+                
+              </div>
+            
+            </div>
+            </div>
+        </div>
+    </section>
+
+ 
+    <section class="ftco-section ftco-degree-bg"
+        style="padding-top: 0; padding-left: 0; padding-right: 0; padding: 6em;">
+        <div class="container">
+        <div class="row justify-content-center">
+        <div class="col-md-12 heading-section text-center ftco-animate mb-5" >
+
+        <div id="result" class="h">
+            <!-- <div class="title" id="rT"></div>
+            <div class="body" id="rM"></div> -->
+             
+            <div class="button anim" style="margin-bottom:5%" onclick="startGame()">Try Again?</div>
+            <!-- <a href="game.html">Try Again?</a> -->
+            <!-- <div class="button anim"> <a href="index.html" style="text-decoration:none; color:black">Back To Trendy</a></div> -->
+        </div>
+        <div id="pGame">
+            <div id="letter"></div>
+            <div id="game">
+                <div class="player">
+                    <div class="playerModel">
+                        <div class="head" data="false" id="g4"></div>
+                        <div class="body" data="false" l="false" r="false" id="g5"></div>
+                        <div class="foot" data="false" l="false" r="false" id="g6"></div>
+                    </div>
+                </div>
+                <div class="stang3" data="false" id="g3"></div>
+                <div class="stang2" data="false" id="g2"></div>
+                <div class="stang" data="false" id="g1"></div>
+                <div class="ground" data="false" id="g0"></div>
+                <div class="hintButton" data="false" id="hintButton" onclick="hint()">?</div>
+            </div>
+            <div id="tastatur">
+                <div id="moveKeybord"><div class="marg"></div></div>
+                <div id="keybord"></div>
+            </div>
+            <div class="hint" id="hint">
+                <div class="title">Hint<div class="exit" onclick="hintExit()">X</div></div>
+                <div class="body" id="hintText"></div>
+            </div>
+        </div>
+
+        </div>
+        </div>
+        </div>
+
+      </section>
+
+
+    <footer class="ftco-footer ftco-section">
+        <div class="container">
+            <div class="row mb-3">
+    
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4">
+                <h2 class="ftco-heading-2">Trendy Words</h2>
+                <p>이슈 단어들을 한눈에 볼 수 있고 <br> 발음 학습뿐만 아니라 <br> 단어 쓰임 추이를 그래프로 확인해 볼 수 있습니다.</p>
+                <ul class="ftco-footer-social list-unstyled mt-5">
+                    <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                    <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                    <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                </ul>
+                </div>
+            </div>
+    
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4 ml-md-4">
+                <h2 class="ftco-heading-2">About Us</h2>
+                <ul class="list-unstyled">
+                    <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Our Story</a></li>
+                    <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Meet the team</a></li>
+                    <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Careers</a></li>
+                </ul>
+                </div>
+            </div>
+    
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4">
+                <h2 class="ftco-heading-2">Have a Questions?</h2>
+                <div class="block-23 mb-3">
+                    <ul>
+                    <li><span class="icon icon-map-marker"></span><span class="text">충북대학교</span></li>
+                    <li><a href="#"><span class="icon icon-phone"></span><span class="text">+82 010 8813 2935</span></a></li>
+                    <li><a href="#"><span class="icon icon-envelope pr-4"></span><span
+                          class="text">yhyh332@naver.com</span></a>
+                    <a href="#"><span class="icon icon-envelope pr-4"></span><span
+                      class="text">dbwjd2236@naver.com</span></a>
+                    <a href="#"><span class="icon icon-envelope pr-4"></span><span
+                      class="text">iavounq@kakao.com</span></a></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </footer>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/jquery.timepicker.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+
+    <script src="js/main.js"></script>
+
+    
+    <script src="https://www.webrtc-experiment.com/common.js"></script>
+
+</body>
+</html>

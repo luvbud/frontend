@@ -1,5 +1,8 @@
 var currentId = 0;
 var currentName = new String();
+var allData;
+var startIndex;
+var pageNum = -1;
 
 function aupl(c, n){
     let innerText = new String();
@@ -15,7 +18,9 @@ function aupl(c, n){
         // console.log(document.getElementById(getname+"_au"+(i+1)).href)
         innerText= innerText.concat("<audio id='"+getname+"_aupl"+(i+1)+"' src='"+document.getElementById(getname+"_au"+(i+1)).href+"'></audio>");
     }
-    document.getElementById(getname+'_audiolist').innerHTML = innerText;
+    if (document.getElementById(getname+'_audiolist')){
+        document.getElementById(getname+'_audiolist').innerHTML = innerText;
+    }
     // console.log(document.getElementById('audiolist'));
 }
 
@@ -54,10 +59,38 @@ function nextButton(e) {
     }
     else {
         document.getElementById("word").textContent = document.getElementById(currentName+"_w"+getid).textContent;
-        document.getElementById("word_mean").textContent = document.getElementById(currentName+"_w_m"+getid).textContent;
-        document.getElementById("word_sentence").textContent = document.getElementById(currentName+"_w_s"+getid).textContent;
-        document.getElementById("word_Ksentence").textContent = document.getElementById(currentName+"_w_k"+getid).textContent;
+        document.getElementsByClassName("arrow_box")[0].textContent = document.getElementById(currentName+"_w_m"+getid).textContent;
+        document.getElementsByClassName("arrow_box")[1].innerHTML = document.getElementById(currentName+"_w_s"+getid).textContent +'<br>' + document.getElementById(currentName+"_w_k"+getid).textContent;
+        // document.getElementById("word_mean").textContent = document.getElementById(currentName+"_w_m"+getid).textContent;
+        // document.getElementById("word_sentence").textContent = document.getElementById(currentName+"_w_s"+getid).textContent;
+        // document.getElementById("word_Ksentence").textContent = document.getElementById(currentName+"_w_k"+getid).textContent;
         document.getElementById("word_play").src = document.getElementById(currentName+"_au"+getid).href;
+
+        var graph_word = document.getElementById("word").textContent;
+        $.ajax({
+            crossOrigin: true,
+
+            url : "http://113.198.137.82:10021/word_info/?word="+ graph_word + "&collection=WordCount",
+            dataType :"json",
+            
+            success : function(data) {
+                var arr = new Array();
+                arr.push(data['bySubject']);
+                // console.log(arr);
+                bysubject_graph(arr);
+
+                var obj = data['daily'];
+                obj = JSON.stringify(obj);
+                var arr = new Array();
+                arr.push(data['daily']);
+                // console.log(arr);
+                bytime_graph(obj);
+            },
+            error : function(e) {
+                document.getElementById("chart").textContent = "정보가 없습니다.";
+                console.log(e.responseText);
+            }
+        });
     }
 }
 
@@ -72,10 +105,38 @@ function preButton(e) {
     }
     else {
         document.getElementById("word").textContent = document.getElementById(currentName+"_w"+getid).textContent;
-        document.getElementById("word_mean").textContent = document.getElementById(currentName+"_w_m"+getid).textContent;
-        document.getElementById("word_sentence").textContent = document.getElementById(currentName+"_w_s"+getid).textContent;
-        document.getElementById("word_Ksentence").textContent = document.getElementById(currentName+"_w_k"+getid).textContent;
+        document.getElementsByClassName("arrow_box")[0].textContent = document.getElementById(currentName+"_w_m"+getid).textContent;
+        document.getElementsByClassName("arrow_box")[1].innerHTML = document.getElementById(currentName+"_w_s"+getid).textContent +'<br>' + document.getElementById(currentName+"_w_k"+getid).textContent;
+        // document.getElementById("word_mean").textContent = document.getElementById(currentName+"_w_m"+getid).textContent;
+        // document.getElementById("word_sentence").textContent = document.getElementById(currentName+"_w_s"+getid).textContent;
+        // document.getElementById("word_Ksentence").textContent = document.getElementById(currentName+"_w_k"+getid).textContent;
         document.getElementById("word_play").src = document.getElementById(currentName+"_au"+getid).href;
+
+        var graph_word = document.getElementById("word").textContent;
+        $.ajax({
+            crossOrigin: true,
+
+            url : "http://113.198.137.82:10021/word_info/?word="+ graph_word + "&collection=WordCount",
+            dataType :"json",
+            
+            success : function(data) {
+                var arr = new Array();
+                arr.push(data['bySubject']);
+                // console.log(arr);
+                bysubject_graph(arr);
+
+                var obj = data['daily'];
+                obj = JSON.stringify(obj);
+                var arr = new Array();
+                arr.push(data['daily']);
+                // console.log(arr);
+                bytime_graph(obj);
+            },
+            error : function(e) {
+                document.getElementById("chart").textContent = "정보가 없습니다.";
+                console.log(e.responseText);
+            }
+        });
     }
 }
 
@@ -109,82 +170,140 @@ function modal(e){
         // console.log(e.textContent);
         
         document.getElementById("word").textContent = e.textContent;
-        document.getElementById("word_mean").textContent = document.getElementById(getname+"_w_m"+getid).textContent;
-        document.getElementById("word_sentence").textContent = document.getElementById(getname+"_w_s"+getid).textContent;
-        document.getElementById("word_Ksentence").textContent = document.getElementById(getname+"_w_k"+getid).textContent;
+        // document.getElementById("word_mean").textContent = document.getElementById(getname+"_w_m"+getid).textContent;
+        document.getElementsByClassName("arrow_box")[0].textContent = document.getElementById(getname+"_w_m"+getid).textContent;
+        document.getElementsByClassName("arrow_box")[1].innerHTML = document.getElementById(getname+"_w_s"+getid).textContent +'<br>' + document.getElementById(getname+"_w_k"+getid).textContent;
+        // document.getElementById("word_sentence").textContent = document.getElementById(getname+"_w_s"+getid).textContent;
+        // document.getElementById("word_Ksentence").textContent = document.getElementById(getname+"_w_k"+getid).textContent;
         document.getElementById("word_play").src = document.getElementById(getname+"_au"+getid).href;
+
+        $('#exampleModalCenter').on('shown.bs.modal', function(e){ 
+
+            var graph_word = document.getElementById("word").textContent;
+            $.ajax({
+                crossOrigin: true,
+
+                url : "http://113.198.137.82:10021/word_info/?word="+ graph_word + "&collection=WordCount",
+                dataType :"json",
+                
+                success : function(data) {
+                    var arr = new Array();
+                    arr.push(data['bySubject']);
+                    // console.log(arr);
+                    bysubject_graph(arr);
+
+                    var obj = data['daily'];
+                    obj = JSON.stringify(obj);
+                    var arr = new Array();
+                    arr.push(data['daily']);
+                    // console.log(arr);
+                    bytime_graph(obj);
+                },
+                error : function(e) {
+                    document.getElementById("chart").textContent = "정보가 없습니다.";
+                    console.log(e.responseText);
+                }
+            });
+            
+        });
     }
 }
 
-
-$(window).on("load", GetAllWords);
-function GetAllWords() {
-    
+function drawList() {
+    let flag = 0;
+ 
     var result = document.getElementById('ALLAjax');
     let innerText = new String();
-    var i = 0;
+    
+    var count = 0;
+    pageNum += 1;
+
+    var index = startIndex;
+
+    let except_word = [
+        "korea", "south", "covid-19", "'s", "say", "korean", "also", "u.s.", "seoul", "country", "new", "year", "people", "time", "day", "first", "see", "world", "case", "make", "news",
+        "take", "go", "percent", "week", "come", "could", "start", "arirang", "s.", "last", "get", "number", "use", "high", "n't", "include", "part", "report", "month", "kim", "today", "look",
+        "dollar", "next", "back", "due", "morning", "area", "well", "would", "plan", "many", "state", "good", "even", "city", "issue", "lee", "need", "north", "afternoon", "japan",
+        "top", "season", "call", "sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "add", "moon", "washington", "china", "talk", "give", "think", "joe", "still",
+        "hold", "result", "art", "become", "tomorrow", "keep", "weather", "’", "home", "game", "team", "event", "second", "weekend"
+    ];
+ 
+    while (count != 10) {
+        if(index == allData.length) break;
+
+        let word = allData[index];
+
+        flag = 0;
+        for(let num = 0; num < except_word.length; num++){
+            if (word[0] == except_word[num]){
+                flag = 1;
+                // console.log(word[0]);
+                index += 1;
+                break;
+            }
+        }
+
+        if(flag == 0) {
+            $.ajax({
+                crossOrigin: true,
+                url: "http://113.198.137.82:10021/word_info/?word="+ word[0] + "&collection=WordDictionary",
+                dataType: "json",
+                
+                async: false,
+                success : function(data){
+                    if (data['soundLink'] == 'None'){
+                        data['soundLink'] = "#";
+                    }
+                    innerText = "";
+                    innerText = innerText.concat("<div class='block-21 mb-4 d-flex'><a class='blog-img mr-4'><h3 class='allnumber'>" + ((count+1) + (pageNum*10)) + "</h3></a>");
+                    innerText = innerText.concat("<div class='text'><h2 class='heading'><a id='all_w"+((count+1) + (pageNum*10))+"' href='javascript:void(0);' onclick='modal(this);' data-toggle='modal' data-target='#exampleModalCenter' style='font-size: 20px; font-weight: bold;'>" + word[0] + "</a><a id='all_au"+((count+1) + (pageNum*10))+"' href='" + data['soundLink'] + "'></a><a href='javascript:void(0);' onclick='auplay(this);' id='all_aup"+((count+1) + (pageNum*10))+"'><span class='icon-volume-up' style='margin-left: 10px;'></span></a><span id='all_w_m"+((count+1) + (pageNum*10))+"' style='font-size: 14px; margin-left: 10px;'>");
+                    
+                    var obj = data['meaning'];
+                    for(var objVarName in obj) {
+                        objKey = objVarName.toLowerCase();
+                        objValue = obj[objVarName];
+                        innerText = innerText.concat(objVarName + " : " + obj[objVarName] + " ");
+                        // JSON.stringify(obj)
+                    }
+                    innerText = innerText.concat("</span> </h2><p id='all_w_s"+((count+1) + (pageNum*10))+"' style='margin-bottom: 5px;'>" + data['exampleText'] + "</p><p id='all_w_k"+((count+1) + (pageNum*10))+"'>" + data['exampleKoreanText'] + "</p></div></div>");
+                    // $("#showmore").attr('style','display: block !important');
+                    
+                    var temp = result.innerHTML;
+                    temp = temp.concat(innerText);
+
+                    result.innerHTML = temp;
+                    count += 1;
+                    index += 1;
+                },
+                error : function(e) {
+                    console.log(e.responseText);
+                }
+            });
+        }
+    }
+
+    startIndex = index;
+}
+
+$(window).on("load", GetAllWords);
+function GetAllWords() { // 윈도우가 로드 되는 시점에 첫 번으로 시작되는 함수
+
+    // 시작하는 인덱스
+    startIndex = 0;
+
     $.ajax({
         crossOrigin: true,
         // url : "http://113.198.137.82:10021/word_info/top_rank/?rank=150&cycle=totalCount",
 
+        // url로 요청을 보냄
         url : "http://113.198.137.82:10021/word_info/top_rank/?rank=150&cycle=monthly&date=202011",
         dataType :"json",
         
-        success : function(data) {
-            let flag = 0;
-            let except_word = [
-                "korea", "south", "covid-19", "'s", "say", "korean", "also", "u.s.", "seoul", "country", "new", "year", "people", "time", "day", "first", "see", "world", "case", "make", "news",
-                "take", "go", "percent", "week", "come", "could", "start", "arirang", "s.", "last", "get", "number", "use", "high", "n't", "include", "part", "report", "month", "kim", "today", "look",
-                "dollar", "next", "back", "due", "morning", "area", "well", "would", "plan", "many", "state", "good", "even", "city", "issue", "lee", "need", "north", "afternoon", "japan",
-                "top", "season", "call", "sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "add", "moon", "washington", "china", "talk", "give", "think", "joe", "still",
-                "hold", "result", "art", "become", "tomorrow", "keep", "weather", "’", "home", "game", "team", "event", "second"
-            ];
-            
-            for (let index = 0; index < data.length; index++) {
-                let word = data[index];
-                
-                for(let num = 0; num < except_word.length; num++){
-                    if (word[0] == except_word[num]){
-                        flag = 1;
-                        // console.log(word[0]);
-                        break;
-                    }
-                    else {
-                        flag = 0;
-                    }
-                }
-                if(flag == 0){
-                    i = i + 1;
-                    $.ajax({
-                        crossOrigin: true,
-                        url: "http://113.198.137.82:10021/word_info/?word="+ word[0] + "&collection=WordDictionary",
-                        dataType: "json",
-                        
-                        async: false,
-                        success : function(data){
-                            if (data['soundLink'] == 'None'){
-                                data['soundLink'] = "#";
-                            }
-                            innerText = innerText.concat("<div class='block-21 mb-4 d-flex'><a class='blog-img mr-4'><h3 class='allnumber'>" + i + "</h3></a>");
-                            innerText = innerText.concat("<div class='text'><h2 class='heading'><a id='all_w"+i+"' href='javascript:void(0);' onclick='modal(this);' data-toggle='modal' data-target='#exampleModalCenter' style='font-size: 20px; font-weight: bold;'>" + word[0] + "</a><a id='all_au"+i+"' href='" + data['soundLink'] + "'></a><a href='javascript:void(0);' onclick='auplay(this);' id='all_aup"+i+"'><span class='icon-volume-up' style='margin-left: 10px;'></span></a><span id='all_w_m"+i+"' style='font-size: 14px; margin-left: 10px;'>");
-                            var obj = data['meaning'];
-                            // <a id='all_w"+i+"' href='javascript:void(0);' onclick='modal(this);'></a>
-                            for(var objVarName in obj) {
-                                objKey = objVarName.toLowerCase();
-                                objValue = obj[objVarName];
-                                innerText = innerText.concat(objVarName + " : " + obj[objVarName] + " ");
-                                // JSON.stringify(obj)
-                            }
-                            innerText = innerText.concat("</span> </h2><p id='all_w_s"+i+"' style='margin-bottom: 5px;'>" + data['exampleText'] + "</p><p id='all_w_k"+i+"'>" + data['exampleKoreanText'] + "</p></div></div>");
-                        },
-                        error : function(e) {
-                            console.log(e.responseText);
-                        }
 
-                    });
-                }
-                result.innerHTML = innerText;
-            }
+        success : function(data) {
+            allData = data;
+            drawList();
+
             var count = $('.allnumber').length;
             var name = new String();
             name = name.concat("all");
@@ -196,16 +315,19 @@ function GetAllWords() {
     });
 }
 
-$(window).on("load", GetNatlPoliticsWords);
+// $(window).on("load", GetNatlPoliticsWords);
+$("#pills-NatlPolitics-tab").click("load", GetNatlPoliticsWords);
 function GetNatlPoliticsWords() {
     var result = document.getElementById('NatlPoliticsAjax');
     let innerText = new String();
     var i = 0;
+    console.log("aaa");
+
     $.ajax({
         crossOrigin: true,
         // url : "http://113.198.137.82:10021/word_info/top_rank/?rank=150&cycle=totalCount",
 
-        url : "http://113.198.137.82:10021/word_info/top_rank/?rank=30&cycle=bySubject&subject=Nat%27l/Politics",
+        url : "http://113.198.137.82:10021/word_info/top_rank/?rank=39&cycle=bySubject&subject=Nat%27l/Politics",
         dataType :"json",
         
         success : function(data) {
@@ -217,6 +339,7 @@ function GetNatlPoliticsWords() {
                 "top", "season", "call", "sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "add", "moon", "washington", "china", "talk", "give", "think", "joe", "still",
                 "hold", "result", "art", "become", "tomorrow", "keep", "weather", "’", "home", "game", "team", "event", "second"
             ];
+            
             
             for (let index = 0; index < data.length; index++) {
                 let word = data[index];
@@ -231,6 +354,8 @@ function GetNatlPoliticsWords() {
                         flag = 0;
                     }
                 }
+
+                console.log(word);
                 if(flag == 0){
                     i = i + 1;
                     $.ajax({
@@ -261,8 +386,11 @@ function GetNatlPoliticsWords() {
 
                     });
                 }
-                result.innerHTML = innerText;
+                if (result){
+                    result.innerHTML = innerText;
+                }
             }
+           
             var count = $('.natnumber').length;
             var name = new String();
             name = name.concat("nat");
@@ -276,7 +404,8 @@ function GetNatlPoliticsWords() {
 }
 
 
-$(window).on("load", GetWorldWords);
+// $(window).on("load", GetWorldWords);
+$("#pills-World-tab").click("load", GetWorldWords);
 function GetWorldWords() {
     var result = document.getElementById('WorldAjax');
     let innerText = new String();
@@ -285,7 +414,7 @@ function GetWorldWords() {
         crossOrigin: true,
         // url : "http://113.198.137.82:10021/word_info/top_rank/?rank=150&cycle=totalCount",
 
-        url : "http://113.198.137.82:10021/word_info/top_rank/?rank=30&cycle=bySubject&subject=World",
+        url : "http://113.198.137.82:10021/word_info/top_rank/?rank=39&cycle=bySubject&subject=World",
         dataType :"json",
         
         success : function(data) {
@@ -295,7 +424,7 @@ function GetWorldWords() {
                 "take", "go", "percent", "week", "come", "could", "start", "arirang", "s.", "last", "get", "number", "use", "high", "n't", "include", "part", "report", "month", "kim", "today", "look",
                 "dollar", "next", "back", "due", "morning", "area", "well", "would", "plan", "many", "state", "good", "even", "city", "issue", "lee", "need", "north", "afternoon", "japan",
                 "top", "season", "call", "sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "add", "moon", "washington", "china", "talk", "give", "think", "joe", "still",
-                "hold", "result", "art", "become", "tomorrow", "keep", "weather", "’", "home", "game", "team", "event", "second"
+                "hold", "result", "art", "become", "tomorrow", "keep", "weather", "’", "home", "game", "team", "event", "second", "kong"
             ];
             
             for (let index = 0; index < data.length; index++) {
@@ -341,7 +470,9 @@ function GetWorldWords() {
 
                     });
                 }
-                result.innerHTML = innerText;
+                if (result){
+                    result.innerHTML = innerText;
+                }
             }
             var count = $('.wornumber').length;
             var name = new String();
@@ -354,7 +485,8 @@ function GetWorldWords() {
     });
 }
 
-$(window).on("load", GetEconomyWords);
+// $(window).on("load", GetEconomyWords);
+$("#pills-Economy-tab").click("load", GetEconomyWords);
 function GetEconomyWords() {
     var result = document.getElementById('EconomyAjax');
     let innerText = new String();
@@ -419,7 +551,9 @@ function GetEconomyWords() {
 
                     });
                 }
-                result.innerHTML = innerText;
+                if (result){
+                    result.innerHTML = innerText;
+                }
             }
             var count = $('.econumber').length;
             var name = new String();
@@ -432,7 +566,8 @@ function GetEconomyWords() {
     });
 }
 
-$(window).on("load", GetITScienceWords);
+// $(window).on("load", GetITScienceWords);
+$("#pills-ITScience-tab").click("load", GetITScienceWords);
 function GetITScienceWords() {
     var result = document.getElementById('ITScienceAjax');
     let innerText = new String();
@@ -441,7 +576,7 @@ function GetITScienceWords() {
         crossOrigin: true,
         // url : "http://113.198.137.82:10021/word_info/top_rank/?rank=150&cycle=totalCount",
 
-        url : "http://113.198.137.82:10021/word_info/top_rank/?rank=30&cycle=bySubject&subject=IT/Science",
+        url : "http://113.198.137.82:10021/word_info/top_rank/?rank=27&cycle=bySubject&subject=IT/Science",
         dataType :"json",
         
         success : function(data) {
@@ -497,7 +632,9 @@ function GetITScienceWords() {
 
                     });
                 }
-                result.innerHTML = innerText;
+                if (result){
+                    result.innerHTML = innerText;
+                }
             }
             var count = $('.itsnumber').length;
             var name = new String();
@@ -511,7 +648,8 @@ function GetITScienceWords() {
     
 }
 
-$(window).on("load", GetSportsWords);
+// $(window).on("load", GetSportsWords);
+$("#pills-Sports-tab").click("load", GetSportsWords);
 function GetSportsWords() {
     var result = document.getElementById('SportsAjax');
     let innerText = new String();
@@ -520,7 +658,7 @@ function GetSportsWords() {
         crossOrigin: true,
         // url : "http://113.198.137.82:10021/word_info/top_rank/?rank=150&cycle=totalCount",
 
-        url : "http://113.198.137.82:10021/word_info/top_rank/?rank=30&cycle=bySubject&subject=Sports",
+        url : "http://113.198.137.82:10021/word_info/top_rank/?rank=21&cycle=bySubject&subject=Sports",
         dataType :"json",
         
         success : function(data) {
@@ -530,7 +668,7 @@ function GetSportsWords() {
                 "take", "go", "percent", "week", "come", "could", "start", "arirang", "s.", "last", "get", "number", "use", "high", "n't", "include", "part", "report", "month", "kim", "today", "look",
                 "dollar", "next", "back", "due", "morning", "area", "well", "would", "plan", "many", "state", "good", "even", "city", "issue", "lee", "need", "north", "afternoon", "japan",
                 "top", "season", "call", "sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "add", "moon", "washington", "china", "talk", "give", "think", "joe", "still",
-                "hold", "result", "art", "become", "tomorrow", "keep", "weather", "’", "home", "game", "team", "event", "second"
+                "hold", "result", "art", "become", "tomorrow", "keep", "weather", "’", "home", "game", "team", "event", "second", "k"
             ];
             
             for (let index = 0; index < data.length; index++) {
@@ -576,7 +714,9 @@ function GetSportsWords() {
 
                     });
                 }
-                result.innerHTML = innerText;
+                if (result){
+                    result.innerHTML = innerText;
+                }
             }
             var count = $('.sponumber').length;
             var name = new String();
@@ -590,7 +730,8 @@ function GetSportsWords() {
     
 }
 
-$(window).on("load", GetLifeCultureWords);
+// $(window).on("load", GetLifeCultureWords);
+$("#pills-LifeCulture-tab").click("load", GetLifeCultureWords);
 function GetLifeCultureWords() {
     var result = document.getElementById('LifeCultureAjax');
     let innerText = new String();
@@ -599,7 +740,7 @@ function GetLifeCultureWords() {
         crossOrigin: true,
         // url : "http://113.198.137.82:10021/word_info/top_rank/?rank=150&cycle=totalCount",
 
-        url : "http://113.198.137.82:10021/word_info/top_rank/?rank=30&cycle=bySubject&subject=Life/Culture",
+        url : "http://113.198.137.82:10021/word_info/top_rank/?rank=38&cycle=bySubject&subject=Life/Culture",
         dataType :"json",
         
         success : function(data) {
@@ -609,7 +750,7 @@ function GetLifeCultureWords() {
                 "take", "go", "percent", "week", "come", "could", "start", "arirang", "s.", "last", "get", "number", "use", "high", "n't", "include", "part", "report", "month", "kim", "today", "look",
                 "dollar", "next", "back", "due", "morning", "area", "well", "would", "plan", "many", "state", "good", "even", "city", "issue", "lee", "need", "north", "afternoon", "japan",
                 "top", "season", "call", "sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "add", "moon", "washington", "china", "talk", "give", "think", "joe", "still",
-                "hold", "result", "art", "become", "tomorrow", "keep", "weather", "’", "home", "game", "team", "event", "second"
+                "hold", "result", "art", "become", "tomorrow", "keep", "weather", "’", "home", "game", "team", "event", "second", "music"
             ];
             
             for (let index = 0; index < data.length; index++) {
@@ -655,7 +796,9 @@ function GetLifeCultureWords() {
 
                     });
                 }
-                result.innerHTML = innerText;
+                if (result){
+                    result.innerHTML = innerText;
+                }
             }
             var count = $('.lifnumber').length;
             var name = new String();
@@ -668,7 +811,8 @@ function GetLifeCultureWords() {
     });
 }
 
-$(window).on("load", GetWeatherWords);
+// $(window).on("load", GetWeatherWords);
+$("#pills-Weather-tab").click("load", GetWeatherWords);
 function GetWeatherWords() {
     var result = document.getElementById('WeatherAjax');
     let innerText = new String();
@@ -687,7 +831,7 @@ function GetWeatherWords() {
                 "take", "go", "percent", "week", "come", "could", "start", "arirang", "s.", "last", "get", "number", "use", "high", "n't", "include", "part", "report", "month", "kim", "today", "look",
                 "dollar", "next", "back", "due", "morning", "area", "well", "would", "plan", "many", "state", "good", "even", "city", "issue", "lee", "need", "north", "afternoon", "japan",
                 "top", "season", "call", "sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "add", "moon", "washington", "china", "talk", "give", "think", "joe", "still",
-                "hold", "result", "art", "become", "tomorrow", "keep", "weather", "’", "home", "game", "team", "event", "second"
+                "hold", "result", "art", "become", "tomorrow", "keep", "weather", "’", "home", "game", "team", "event", "second", "jeju", "daegu"
             ];
             
             for (let index = 0; index < data.length; index++) {
@@ -733,7 +877,9 @@ function GetWeatherWords() {
 
                     });
                 }
-                result.innerHTML = innerText;
+                if (result){
+                    result.innerHTML = innerText;
+                }
             }
             var count = $('.weanumber').length;
             var name = new String();
@@ -748,7 +894,8 @@ function GetWeatherWords() {
 }
 
 
-$(window).on("load", GetForeignPolicyWords);
+// $(window).on("load", GetForeignPolicyWords);
+$("#pills-ForeignPolicy-tab").click("load", GetForeignPolicyWords);
 function GetForeignPolicyWords() {
     var result = document.getElementById('ForeignPolicyAjax');
     let innerText = new String();
@@ -757,7 +904,7 @@ function GetForeignPolicyWords() {
         crossOrigin: true,
         // url : "http://113.198.137.82:10021/word_info/top_rank/?rank=150&cycle=totalCount",
 
-        url : "http://113.198.137.82:10021/word_info/top_rank/?rank=30&cycle=bySubject&subject=Foreign%20Policy",
+        url : "http://113.198.137.82:10021/word_info/top_rank/?rank=37&cycle=bySubject&subject=Foreign%20Policy",
         dataType :"json",
         
         success : function(data) {
@@ -767,7 +914,7 @@ function GetForeignPolicyWords() {
                 "take", "go", "percent", "week", "come", "could", "start", "arirang", "s.", "last", "get", "number", "use", "high", "n't", "include", "part", "report", "month", "kim", "today", "look",
                 "dollar", "next", "back", "due", "morning", "area", "well", "would", "plan", "many", "state", "good", "even", "city", "issue", "lee", "need", "north", "afternoon", "japan",
                 "top", "season", "call", "sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "add", "moon", "washington", "china", "talk", "give", "think", "joe", "still",
-                "hold", "result", "art", "become", "tomorrow", "keep", "weather", "’", "home", "game", "team", "event", "second"
+                "hold", "result", "art", "become", "tomorrow", "keep", "weather", "’", "home", "game", "team", "event", "second", "japanese", "foreign"
             ];
             
             for (let index = 0; index < data.length; index++) {
@@ -813,7 +960,9 @@ function GetForeignPolicyWords() {
 
                     });
                 }
-                result.innerHTML = innerText;
+                if (result){
+                    result.innerHTML = innerText;
+                }
             }
             var count = $('.fornumber').length;
             var name = new String();

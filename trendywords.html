@@ -28,8 +28,8 @@
 
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/record.css">
+    <link rel="stylesheet" href="css/style.css?ver=21">
+    <link rel="stylesheet" href="css/modal.css?ver=200">
     
     <!-- 그래프 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.css"/>
@@ -58,7 +58,8 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-	          <li class="nav-item active"><a href="trendywords.html" class="nav-link">Start Learn</a></li>
+            <li class="nav-item active"><a href="trendywords.html" class="nav-link">Start Learn</a></li>
+            <li class="nav-item"><a href="game.html" class="nav-link">Game</a></li>
 	          <!-- <li class="nav-item"><a href="#" class="nav-link" title="구현 중">Log In</a></li> -->
 	          <!-- <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
 	          <li class="nav-item"><a href="properties.html" class="nav-link">Properties</a></li>
@@ -79,7 +80,7 @@
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate pb-5 text-center">
           	<span>Start Learn <i class="ion-ios-arrow-forward"></i></span></p>
-            <h1 class="mb-3 bread">Trendy Words</h1> <br>
+            <h1 class="mb-3 bread">Trendy Words</h1> <br id="br">
             <p>* Word of the Year *</p>
             <div class="tagcloud">
               <!-- <a href="#" data-toggle="modal" data-target="#exampleModalCenter" class="tag-cloud-link">COVID-19</a> -->
@@ -170,7 +171,8 @@
                   <br>
                   <!-- <p><a href="#" class="learn-button" data-id="word" data-toggle="modal" data-target="#exampleModalCenter">학습하기</a></p> -->
                   <div id="ALLAjax"></div>
-                  
+                  <button id="showmore" onclick="drawList();" type="button">show more</button>
+                  <br>
               </div>
 
               <!-- Nat'l/Politics -->
@@ -318,22 +320,58 @@
             <div class="modal-body">
             <!-- <div onclick="play()"><img src="images/speaker.png" width="25px" style="cursor: pointer;"></div> -->
             <div style="margin-bottom: 10px;">
-                <a href='javascript:void(0);' onclick="play(this)" class="learn-button">단어듣기</a>
-                <div id="controls">
-                  <button id="recordButton" type="button" class='btn btn-secondary'>Record</button>
-                  <button id="pauseButton" class='btn btn-secondary' disabled>Pause</button>
-                  <button id="stopButton" class='btn btn-secondary' disabled>Stop</button>
-                  <span id="score"><strong>점수: </strong></span>
+              <div>
+                <span id="word" style="font-size: 20px; font-weight: bold;"> </span>
+                <a href='javascript:void(0);' onclick="play(this)" style="color: black;" onmouseover="this.style.color='rgb(252, 186, 3)'" onmouseout="this.style.color='#000'"><span class='icon-volume-up' style='margin-left: 10px;'></span></a>
+                <br>
+                <span id="menu">
+                  <div> <span>뜻</span>
+                    <p class="arrow_box"></p>
+                  </div>
+                  <div> <span>예문</span>
+                    <p class="arrow_box" style="font-size: 10px;"></p>
+                  </div>
+                </span>
+                <div id="controls" style="display: inline; margin-left: 10px;">
+                  <button id="recordButton" type="button" style="border: none; outline: none; background: none; cursor: pointer; border-radius: 50%; padding: 2px 12px;"><span class="icon-microphone"></span></button>
+                  <!-- <button id="pauseButton" disabled><span class="icon-pause"></span></button> -->
+                  <button id="stopButton" disabled style="border: none; outline: none; background: none; cursor: pointer; padding: 2px 12px;"><span class="icon-stop"></span></button>
+                  <span id="score"><strong>SCORE </strong></span>
                  </div>
-                 <br>
+                <!-- <script>
+                  console.log(document.getElementById("word").textContent);
+                </script> -->
+
+                <!-- <span style="font-size: 14px; margin-left: 10px;">
+                <i class="ion-ios-star" style="color: #E6384B"></i>
+                <i class="ion-ios-star" style="color: #E6384B"></i>
+                <i class="ion-ios-star" style="color: #E6384B"></i>
+                <i class="ion-ios-star" style="color: #E6384B"></i>
+                <i class="ion-ios-star"></i>
+                </span> -->
+                <div id="word_mean" style="font-size: 10px;">
+                  
+                </div>
+                <div id="word_sentence" style="font-size: 10px;">
+
+                </div>
+                <div id="word_Ksentence" style="font-size: 10px;">
+
+                </div>
+                
+            </div>
+                
+                
+                 <!-- <br> -->
                  <!-- <div id="formats">Format: start recording to see sample rate</div> -->
                  
                  <!-- <p><strong>Recordings:</strong></p> -->
                  <ol id="recordingsList"></ol>
                  <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
                  <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
-                 <script src="js/reco.js"></script>
-                <hr>
+                 <script src="js/reco.js?ver=202"></script>
+                 <script src=""></script>
+                <!-- <hr> -->
 
                 <!-- <span id="circle" class="icon-circle" style="display: none; color: rgb(255,0,0);"></span>
                 <span id="stars" style="display: none; font-size: 14px;">
@@ -346,33 +384,31 @@
                 </span> -->
                 <audio id="word_play" src=""></audio>
             </div>
-            <div>
-                <span id="word" style="font-size: 20px; font-weight: bold;"> </span>
-                <!-- <script>
-                  console.log(document.getElementById("word").textContent);
-                </script> -->
-
-                <!-- <span style="font-size: 14px; margin-left: 10px;">
-                <i class="ion-ios-star" style="color: #E6384B"></i>
-                <i class="ion-ios-star" style="color: #E6384B"></i>
-                <i class="ion-ios-star" style="color: #E6384B"></i>
-                <i class="ion-ios-star" style="color: #E6384B"></i>
-                <i class="ion-ios-star"></i>
-                </span> -->
-                <div id="word_mean">
-                  
-                </div>
-                <div id="word_sentence">
-
-                </div>
-                <div id="word_Ksentence">
-
-                </div>
-                
-            </div>
-            <div id="chart" style="text-align: center;"></div>
+            
+            <!-- <br> -->
+            <!-- <div id="chart" style="text-align: center;"></div> -->
+            <div id="bysubChart" style="text-align: center; display: block;"></div>
+            <div id="bytimeChart" style="text-align: center; display: none;"></div>
+            <div id="selectGraph"> <button id="subclick" style="color: rgb(252, 186, 3)" onclick="subclick();">주제별 그래프</button><button id="timeclick" onclick="timeclick();">시계열 그래프</button></div>
             
             </div>
+            <script>
+              function subclick(){
+                $("#bysubChart").attr('style','display: block !important');
+                $("#bytimeChart").attr('style','display: none !important');
+                $("#subclick").attr('style','color: rgb(252, 186, 3) !important');
+                $("#timeclick").attr('style','color: #666666 !important');
+    
+              }
+    
+              function timeclick(){
+                $("#bysubChart").attr('style','display: none !important');
+                $("#bytimeChart").attr('style','display: block !important');
+                $("#timeclick").attr('style','color: rgb(252, 186, 3) !important');
+                $("#subclick").attr('style','color: #666666 !important');
+              }
+            </script>
+
             <div class="modal-footer">
               <div class="buttons">
                 <button type='button' onclick='preButton(this);' class='btn btn-secondary'>이전</button>
@@ -417,8 +453,13 @@
               <div class="block-23 mb-3">
                 <ul>
                   <li><span class="icon icon-map-marker"></span><span class="text">충북대학교</span></li>
-                  <li><a href="#"><span class="icon icon-phone"></span><span class="text">+82 1234 1234</span></a></li>
-                  <li><a href="#"><span class="icon icon-envelope pr-4"></span><span class="text">yujachan@cbnu.com</span></a></li>
+                  <li><a href="#"><span class="icon icon-phone"></span><span class="text">+82 010 8813 2935</span></a></li>
+                  <li><a href="#"><span class="icon icon-envelope pr-4"></span><span
+                        class="text">yhyh332@naver.com</span></a>
+                  <a href="#"><span class="icon icon-envelope pr-4"></span><span
+                    class="text">dbwjd2236@naver.com</span></a>
+                  <a href="#"><span class="icon icon-envelope pr-4"></span><span
+                    class="text">iavounq@kakao.com</span></a></li>
                 </ul> 
               </div>
             </div>
@@ -426,44 +467,7 @@
         </div>
       </div>
     </footer>
-          <!--
-            
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4 ml-md-4">
-              <h2 class="ftco-heading-2">Community</h2>
-              <ul class="list-unstyled">
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Search Properties</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>For Agents</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Reviews</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>FAQs</a></li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="col-md">
-             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Company</h2>
-              <ul class="list-unstyled">
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>About Us</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Press</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Contact</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Careers</a></li>
-              </ul>
-            </div>
-          </div>
-          
-        </div>
-
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <p style="color: transparent;">
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" style="color: transparent;">Colorlib</a>
-           </p>
-          </div>
-        </div>
-      </div>
-    </footer> -->
-    
+  
   
 
   <!-- loader -->
@@ -489,11 +493,10 @@
 
   <!-- 따로 작성한 js 적용 -->
   
-  <script src="js/in.js"></script>
-  <script src="js/ajax.js"></script>
+  <script src="js/in.js?ver=20201125"></script>
+  <script src="js/ajax.js?ver=21"></script>
   <script src="js/trendywords.js"></script>
-  <script src="js/graph.js"></script>
-  <!-- <script src="js/record.js"></script> -->
+  <script src="js/graph.js?ver=232"></script>
 
 </body>
 </html>

@@ -96,8 +96,9 @@ address {
 ol,
 ul,
 dl {
-  margin-top: 0;
-  margin-bottom: 1rem; }
+  /* margin-top: 0;
+  margin-bottom: 1rem; */
+  padding-inline-start: 10px !important;}
 
 ol ol,
 ul ul,
@@ -173,7 +174,9 @@ img {
 
 svg {
   overflow: hidden;
-  vertical-align: middle; }
+  vertical-align: middle; 
+  margin: auto; 
+  display: block;}
 
 table {
   border-collapse: collapse; }
@@ -3439,7 +3442,8 @@ input[type="button"].btn-block {
 .tab-content > .active {
   display: block; 
   padding-left: 25px; 
-  padding-top: 25px; }
+  padding-top: 25px; 
+  margin-bottom: 25px; }
 
 .navbar {
   position: relative;
